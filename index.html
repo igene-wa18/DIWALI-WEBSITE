@@ -1,0 +1,1907 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>The Story of Diwali</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600&family=Yatra+One&display=swap">
+<style>
+:root{
+  /* Layout: full-bleed painted scenes on sticky stages, scrubbed by scroll; copy sits in petal-cornered glass cards. One look: night sky, saffron and gold light. */
+  --navy:#101A3A; --purple:#3B176D; --saffron:#FF8C1A; --gold:#FFD166;
+  --diya:#FF5E14; --crimson:#B42318; --cream:#FFF4D6; --leaf:#356859;
+  --deep:#0A1230;
+  --ink:#1B1030;
+  --gutL:max(16px, env(safe-area-inset-left, 0px));
+  --gutR:max(16px, env(safe-area-inset-right, 0px));
+  --display:'Yatra One',Georgia,'Times New Roman',serif;
+  --body:'Mukta','Segoe UI',system-ui,-apple-system,sans-serif;
+  --petal:1.6rem .3rem 1.6rem .3rem;
+  --vw:100vw;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--navy)}
+html.is-loading{overflow:hidden}
+body{background:var(--navy);color:var(--cream);font:400 1.0625rem/1.6 var(--body);overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.eyebrow{font:600 .78rem/1.2 var(--body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+svg.defs{position:absolute;width:0;height:0;overflow:hidden}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:0 2rem;
+  font:600 1.05rem/1 var(--body);letter-spacing:.05em;color:var(--ink);cursor:pointer;border:0;border-radius:var(--petal);
+  background:linear-gradient(180deg,#ffe6a8,var(--gold) 45%,var(--saffron));
+  box-shadow:0 0 0 1px rgba(255,244,214,.55) inset,0 12px 30px -10px rgba(255,140,26,.7),0 0 44px rgba(255,209,102,.25);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s}
+.btn:hover{transform:translateY(-2px) scale(1.03);box-shadow:0 0 0 1px rgba(255,244,214,.7) inset,0 16px 36px -10px rgba(255,140,26,.85),0 0 60px rgba(255,209,102,.45)}
+.btn:active{transform:translateY(0) scale(.99)}
+.btn--ghost{color:var(--cream);background:rgba(10,18,48,.55);border:1px solid rgba(255,209,102,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:none}
+.btn--ghost:hover{background:rgba(59,23,109,.6);box-shadow:0 0 30px rgba(255,209,102,.3)}
+.btn--sm{min-height:44px;padding:0 1.2rem;font-size:.95rem}
+.btn[aria-pressed="true"].btn--ghost{background:linear-gradient(180deg,#ffe6a8,var(--gold));color:var(--ink);border-color:transparent}
+
+/* ---------- fixed controls ---------- */
+.controls{position:fixed;z-index:1100;top:calc(10px + env(safe-area-inset-top,0px));right:calc(10px + env(safe-area-inset-right,0px));display:flex;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:0 .95rem;cursor:pointer;
+  font:600 .85rem/1 var(--body);letter-spacing:.04em;color:var(--cream);white-space:nowrap;
+  background:rgba(10,18,48,.68);border:1px solid rgba(255,209,102,.5);border-radius:.9rem .25rem .9rem .25rem;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:background .25s,color .25s}
+.pill svg{width:18px;height:18px;flex:none}
+.pill:hover{background:rgba(59,23,109,.85)}
+.pill[aria-pressed="true"]{background:linear-gradient(180deg,#ffe6a8,var(--gold));color:var(--ink)}
+.pill[aria-pressed="true"] .mute{display:none}
+.pill[aria-pressed="false"] .waves{display:none}
+#btn-motion .waves,#btn-motion .mute{display:none}
+
+/* ---------- story progress ---------- */
+.progress{position:fixed;z-index:890;right:calc(14px + env(safe-area-inset-right,0px));top:50%;translate:0 -50%;opacity:0;pointer-events:none;transition:opacity .5s}
+.progress.is-on{opacity:1;pointer-events:auto}
+.progress ol{list-style:none;margin:0;padding:.5rem .3rem;display:flex;flex-direction:column;gap:.15rem;
+  background:rgba(10,18,48,.62);border:1px solid rgba(255,209,102,.28);border-radius:1rem .25rem 1rem .25rem;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.progress a{position:relative;display:flex;align-items:center;justify-content:center;width:36px;height:36px;color:rgba(255,244,214,.66);text-decoration:none}
+.progress .dot{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;border:2px solid currentColor;font:600 .72rem/1 var(--body);font-variant-numeric:tabular-nums;transition:background .3s,color .3s,box-shadow .3s}
+.progress .lbl{position:absolute;right:calc(100% + 8px);top:50%;translate:8px -50%;opacity:0;white-space:nowrap;padding:.45rem .8rem;border-radius:.7rem .2rem .7rem .2rem;
+  background:rgba(10,18,48,.92);border:1px solid rgba(255,209,102,.45);color:var(--cream);font:600 .85rem/1 var(--body);letter-spacing:.03em;pointer-events:none;transition:opacity .25s,translate .25s}
+.progress a:hover .lbl,.progress a:focus-visible .lbl,.progress a.peek .lbl{opacity:1;translate:0 -50%}
+.progress a[aria-current="step"]{color:var(--gold)}
+.progress a[aria-current="step"] .dot{background:var(--gold);color:var(--ink);box-shadow:0 0 14px var(--gold)}
+.progress__now{display:none}
+
+/* ---------- stars ---------- */
+.stars{position:absolute;inset:-10%;pointer-events:none}
+.stars::before,.stars::after{content:"";position:absolute;inset:0}
+.stars::before{background-size:260px 260px;animation:twinkle 5s ease-in-out infinite alternate;
+  background-image:radial-gradient(1.3px 1.3px at 12% 18%,#fff 50%,transparent 56%),radial-gradient(1.7px 1.7px at 63% 62%,var(--cream) 50%,transparent 56%),
+  radial-gradient(1px 1px at 81% 28%,#fff 50%,transparent 56%),radial-gradient(1.5px 1.5px at 38% 84%,var(--gold) 50%,transparent 56%)}
+.stars::after{background-size:520px 520px;animation:twinkle 7s ease-in-out -2.5s infinite alternate;
+  background-image:radial-gradient(1.2px 1.2px at 22% 14%,#fff 50%,transparent 56%),radial-gradient(1.8px 1.8px at 74% 47%,var(--gold) 50%,transparent 56%),
+  radial-gradient(1px 1px at 46% 31%,var(--cream) 50%,transparent 56%),radial-gradient(1.3px 1.3px at 91% 88%,#fff 50%,transparent 56%),
+  radial-gradient(1px 1px at 8% 66%,#fff 50%,transparent 56%),radial-gradient(1.5px 1.5px at 58% 93%,var(--cream) 50%,transparent 56%)}
+.stars--drift{animation:drift 160s linear infinite}
+.fxcanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;display:block}
+@keyframes twinkle{from{opacity:.35}to{opacity:1}}
+@keyframes drift{to{transform:translate3d(-520px,-520px,0)}}
+
+/* ---------- diya svg ---------- */
+.diya{display:block;width:100%;height:auto;overflow:visible;--g:1}
+.diya__glow{transform-box:fill-box;transform-origin:center;opacity:var(--g);scale:calc(.5 + var(--g)*.6);animation:glow 3.2s ease-in-out infinite alternate}
+.diya__flame{transform-box:fill-box;transform-origin:50% 100%;scale:calc(.1 + var(--g)*.9);opacity:calc(var(--g)*1.4);animation:flicker 1.3s ease-in-out infinite alternate}
+@keyframes flicker{0%{transform:scale(1,1) rotate(-1.6deg)}35%{transform:scale(.95,1.07) rotate(1.4deg)}70%{transform:scale(1.04,.96) rotate(-.8deg)}100%{transform:scale(.93,1.1) rotate(1.8deg)}}
+@keyframes glow{from{opacity:calc(var(--g,1)*.8)}to{opacity:var(--g,1)}}
+@keyframes breathe{from{opacity:.6}to{opacity:1}}
+
+/* soft round glow whose outer shell takes GSAP opacity and whose ::before breathes */
+.softglow{position:absolute;translate:-50% -50%;aspect-ratio:1;border-radius:50%;pointer-events:none;mix-blend-mode:screen}
+.softglow::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle,rgba(255,236,190,.95),rgba(255,140,26,.5) 32%,transparent 68%);animation:breathe 1.8s ease-in-out infinite alternate}
+
+/* ---------- loader ---------- */
+.loader{position:fixed;inset:0;z-index:1000;overflow:hidden;color:var(--cream);--reveal:0;--d1:0;--d2:0;--d3:0;--d4:0}
+.loader[hidden]{display:none}
+.loader__half{position:absolute;top:0;bottom:0;width:54%;overflow:hidden}
+.loader__half--l{left:0}.loader__half--r{right:0}
+.loader__view{position:absolute;top:0;bottom:0;width:var(--vw);background:radial-gradient(ellipse at 50% 46%,var(--purple) 0%,var(--navy) 58%,var(--deep) 100%)}
+.loader__half--l .loader__view{left:0}.loader__half--r .loader__view{right:0}
+.loader__art{position:absolute;top:0;height:100%;aspect-ratio:9/16;left:50%;translate:-50% 0}
+/* the picture keeps crisp edges inside a thin gold frame; the space beside it is for the cartoon welcome */
+.loader__half .loader__art{background:#0b1233;box-shadow:0 0 0 1px rgba(255,209,102,.6),0 0 0 7px rgba(8,13,38,.72),0 0 0 8px rgba(255,209,102,.22),0 0 64px 4px rgba(255,140,26,.26)}
+.loader{--zw:calc((var(--vw) - 56.25svh)/2)}
+/* the two diya friends, their bunting and lanterns (used beside the loading picture and the thank-you picture) */
+.side{position:absolute;top:0;bottom:0;width:var(--zw);display:none;pointer-events:none}
+.side--l{left:0}.side--r{right:0}
+.side::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 90% 52% at 50% 100%,rgba(255,140,26,.3),transparent 72%),radial-gradient(circle,rgba(255,209,102,.2) 1.5px,transparent 2.4px) 0 0/32px 32px;
+  -webkit-mask-image:linear-gradient(0deg,#000 6%,transparent 90%);mask-image:linear-gradient(0deg,#000 6%,transparent 90%)}
+.swag{position:absolute;left:0;right:0;top:calc(56px + env(safe-area-inset-top,0px));animation:ldrop .9s cubic-bezier(.2,1.2,.4,1) .15s both}
+.swag--r{scale:-1 1}
+.lantern{position:absolute;left:78%;top:26%;translate:-50% 0;width:clamp(56px,20%,108px)}
+.swag--r .lantern{scale:-1 1}
+.lantern__svg{display:block;width:100%;height:auto;overflow:visible}
+.mascotbox{width:100%}
+.friend{position:absolute;left:50%;bottom:calc(5.5svh + env(safe-area-inset-bottom,0px));translate:-50% 0;width:min(82%,46svh);display:flex;flex-direction:column;gap:.9rem;animation:fpop 1s cubic-bezier(.2,1.5,.35,1) .35s both}
+.side--l .friend{align-items:flex-start}.side--r .friend{align-items:flex-end}
+.friend .cbubble{font-size:clamp(14px,3.1svh,27px);transform-origin:12% 100%;animation:bpop .55s cubic-bezier(.2,1.7,.4,1) 1.25s both}
+.side--r .friend .cbubble{transform-origin:88% 100%}
+.side--r .mascotbox{scale:-1 1}
+@keyframes ldrop{from{transform:translateY(-70%);opacity:0}to{transform:none;opacity:1}}
+@keyframes fpop{from{transform:translateY(60px) scale(.7);opacity:0}to{transform:none;opacity:1}}
+@keyframes bpop{from{transform:scale(0);opacity:0}to{transform:none;opacity:1}}
+@media (min-width:821px) and (min-aspect-ratio:5/4){.loader .side{display:block}}
+.loader__half .loader__art img{width:100%;height:100%;object-fit:cover;
+  -webkit-mask-image:
+    radial-gradient(ellipse 40% 20% at 50% 49.6%,#000 calc(var(--reveal)*1% - 26%),transparent calc(var(--reveal)*1%)),
+    radial-gradient(circle 17svh at 18.4% 30.4%,#000 calc(var(--d1)*55%),transparent calc(var(--d1)*100%)),
+    radial-gradient(circle 17svh at 81.2% 30.4%,#000 calc(var(--d2)*55%),transparent calc(var(--d2)*100%)),
+    radial-gradient(circle 17svh at 16% 59.4%,#000 calc(var(--d3)*55%),transparent calc(var(--d3)*100%)),
+    radial-gradient(circle 17svh at 83.8% 59.4%,#000 calc(var(--d4)*55%),transparent calc(var(--d4)*100%));
+  mask-image:
+    radial-gradient(ellipse 40% 20% at 50% 49.6%,#000 calc(var(--reveal)*1% - 26%),transparent calc(var(--reveal)*1%)),
+    radial-gradient(circle 17svh at 18.4% 30.4%,#000 calc(var(--d1)*55%),transparent calc(var(--d1)*100%)),
+    radial-gradient(circle 17svh at 81.2% 30.4%,#000 calc(var(--d2)*55%),transparent calc(var(--d2)*100%)),
+    radial-gradient(circle 17svh at 16% 59.4%,#000 calc(var(--d3)*55%),transparent calc(var(--d3)*100%)),
+    radial-gradient(circle 17svh at 83.8% 59.4%,#000 calc(var(--d4)*55%),transparent calc(var(--d4)*100%))}
+.loader__top{position:absolute;inset:0;z-index:2;pointer-events:none}
+.loader__lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.loader__lines path,.loader__lines circle{fill:none;stroke:var(--gold);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;filter:drop-shadow(0 0 5px rgba(255,209,102,.85))}
+.loader__lines .thin{stroke-width:3;stroke:var(--saffron)}
+.lglow{width:28%;opacity:0}
+.loader__ui{position:absolute;left:0;right:0;bottom:calc(7svh + env(safe-area-inset-bottom,0px));padding:0 var(--gutR) 0 var(--gutL);text-align:center}
+.loader__text{font:400 clamp(1.1rem,2.4vw,1.5rem)/1.3 var(--display);color:var(--cream);text-shadow:0 0 18px rgba(255,140,26,.6),0 2px 10px rgba(5,8,26,.9)}
+.flamebar{position:relative;width:min(70vw,340px);height:4px;margin:1.5rem auto .9rem;background:rgba(255,244,214,.2);border-radius:4px;--p:0}
+.flamebar__fill{position:absolute;left:0;top:0;bottom:0;width:calc(var(--p)*1%);border-radius:4px;background:linear-gradient(90deg,var(--saffron),var(--gold))}
+.flamebar__flame{position:absolute;top:50%;left:calc(var(--p)*1%);width:16px;height:26px;translate:-50% -88%;border-radius:50% 50% 50% 50%/64% 64% 36% 36%;
+  background:radial-gradient(ellipse at 50% 78%,#fff4d6 0%,var(--gold) 38%,var(--diya) 80%);box-shadow:0 0 18px 6px rgba(255,140,26,.65),0 0 42px 12px rgba(255,209,102,.3);animation:flicker 1s ease-in-out infinite alternate;transform-origin:50% 100%}
+.loader__pct{font:600 .9rem/1 var(--body);letter-spacing:.2em;color:var(--gold);font-variant-numeric:tabular-nums;text-shadow:0 2px 8px rgba(5,8,26,.9)}
+.loader__seam{position:absolute;z-index:3;top:-10%;bottom:-10%;left:50%;width:18vw;translate:-50% 0;transform:scaleX(0);opacity:0;mix-blend-mode:screen;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(255,236,190,.98),rgba(255,140,26,.55) 34%,transparent 70%)}
+
+/* ---------- cartoon friends (loader and thank-you) ---------- */
+.mascot{display:block;width:100%;height:auto;overflow:visible}
+.m-body{transform-box:fill-box;transform-origin:50% 100%;animation:mbob 2.6s ease-in-out infinite}
+@keyframes mbob{0%,100%{transform:translateY(0) scale(1,1)}50%{transform:translateY(-7px) scale(.985,1.025)}}
+.m-wave{transform-box:fill-box;transform-origin:0% 100%;animation:mwave 1s ease-in-out infinite alternate}
+.m-wave--slow{animation-duration:1.7s}
+@keyframes mwave{from{transform:rotate(-13deg)}to{transform:rotate(15deg)}}
+.m-glow{animation:breathe 1.8s ease-in-out infinite alternate}
+.m-flame{transform-box:fill-box;transform-origin:50% 96%;animation:flicker 1.2s ease-in-out infinite alternate}
+.m-eyes{transform-box:fill-box;transform-origin:50% 50%;animation:mblink 4.6s infinite}
+@keyframes mblink{0%,92%,100%{transform:scaleY(1)}95.5%{transform:scaleY(.1)}}
+.mascot .tw{animation:twinkle 1.9s ease-in-out infinite alternate}
+.m-spark{transform-box:fill-box;transform-origin:50% 50%;animation:mspin 1.4s linear infinite}
+@keyframes mspin{to{transform:rotate(360deg)}}
+.bunting{display:block;width:100%;height:auto;overflow:visible}
+.m-flag{transform-box:fill-box;transform-origin:50% 0;animation:mflag 2.6s ease-in-out infinite alternate}
+@keyframes mflag{from{transform:rotate(-6deg)}to{transform:rotate(6deg)}}
+.m-lantern{transform-box:fill-box;transform-origin:50% 0;animation:mswing 3.4s ease-in-out infinite alternate}
+@keyframes mswing{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
+.m-lglow{animation:breathe 1.6s ease-in-out infinite alternate}
+.cbubble{position:relative;display:inline-grid;gap:.05em;justify-items:center;padding:.5em .95em .55em;text-align:center;color:var(--ink);
+  background:linear-gradient(180deg,#FFFBEC,var(--cream));border:3px solid #2B1025;border-radius:1.3em 1.3em 1.3em .35em;box-shadow:0 5px 0 rgba(43,16,37,.55),0 0 34px rgba(255,209,102,.4)}
+.cbubble b{font:400 1.45em/1.1 var(--display);letter-spacing:.01em}
+.cbubble span{font:600 .82em/1.2 var(--body);color:#7a2c10;letter-spacing:.04em}
+.cbubble::after{content:"";position:absolute;left:1.6em;bottom:-.72em;width:1em;height:1em;background:var(--cream);border:3px solid #2B1025;border-top:0;border-left:0;transform:skewY(32deg) rotate(0deg);border-radius:0 0 .5em 0}
+.cbubble--r{border-radius:1.3em 1.3em .35em 1.3em}
+.cbubble--r::after{left:auto;right:1.6em;border-left:3px solid #2B1025;border-right:0;transform:skewY(-32deg);border-radius:0 0 0 .5em}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100vh;height:100svh;min-height:520px;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 18%,#1d2c68 0%,var(--navy) 46%,var(--deep) 100%)}
+.hero__art{position:absolute;left:50%;bottom:0;translate:-50% 0;width:max(100%,calc(100svh*16/9));aspect-ratio:16/9}
+.hero__art>img{position:absolute;inset:0;width:100%;height:100%}
+.hero__glow{width:52%;top:46%;opacity:.4}
+.hero__glow::before{animation-duration:4.5s;background:radial-gradient(circle,rgba(255,209,102,.5),rgba(255,140,26,.2) 40%,transparent 68%)}
+.hero__glow--l{left:15%}.hero__glow--r{left:85%}
+.lamp-glow{width:5.4%}
+.lamp-glow--big{width:11%}
+.hero__copy{position:absolute;z-index:4;top:calc(11svh + env(safe-area-inset-top,0px));left:0;right:0;margin-inline:auto;width:min(44vw,720px);text-align:center;padding:0 8px}
+.hero h1{font:400 clamp(2.6rem,5.4vw,5rem)/1.02 var(--display);background:linear-gradient(180deg,#fff7e0 12%,var(--gold) 58%,var(--saffron));-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 0 22px rgba(255,140,26,.5)) drop-shadow(0 4px 2px rgba(10,18,48,.6))}
+.hero__sub{margin:1rem auto 1.6rem;max-width:28rem;font-size:clamp(1.05rem,1.4vw,1.28rem);line-height:1.5;color:var(--cream);text-shadow:0 2px 14px rgba(10,18,48,.95),0 0 30px rgba(10,18,48,.8)}
+
+/* ---------- why diwali is celebrated ---------- */
+.meaning{position:relative;height:260vh;height:260svh;background:var(--navy)}
+.m-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--saffron)}
+.m-night,.m-gold{position:absolute;inset:0}
+.m-gold{background:radial-gradient(ellipse at 50% 36%,#fff0c2 0%,var(--gold) 30%,#f9a72f 70%,#e0731c 100%)}
+.m-night{background:radial-gradient(ellipse at 50% 38%,#1d2c68 0%,var(--navy) 50%,#070d24 100%);opacity:0}
+.m-diya{position:absolute;left:50%;top:32%;translate:-50% -50%;width:min(44vw,330px);z-index:2}
+.m-diya .diya__glow{animation:none}
+.m-lamps{position:absolute;top:24%;bottom:30%;width:clamp(44px,8vw,104px);display:flex;flex-direction:column;justify-content:space-around;align-items:center;z-index:2}
+.m-lamps--l{left:calc(var(--gutL) + 2vw)}.m-lamps--r{right:calc(var(--gutR) + 2vw)}
+.m-lamps .diya{width:100%}
+.m-copy{position:absolute;z-index:3;left:max(16px, env(safe-area-inset-left, 0px));right:max(16px, env(safe-area-inset-right, 0px));top:58%;margin-inline:auto;max-width:44rem;text-align:center;color:var(--ink)}
+.m-copy .eyebrow{display:block;color:#7a2c10;margin-bottom:.9rem}
+.m-copy p{font:400 clamp(1.4rem,2.9vw,2.25rem)/1.4 var(--display);text-wrap:balance}
+
+/* ---------- ramayana story ---------- */
+.story__intro{position:relative;display:grid;align-content:end;justify-items:center;min-height:72svh;padding-block:0 10svh;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));text-align:center;
+  background:linear-gradient(180deg,#f8a52e 0,#b9561f 12%,#4a2340 34%,var(--deep) 58%)}
+.story__intro h2{font:400 clamp(2.1rem,5.4vw,4.2rem)/1.05 var(--display);color:var(--gold);text-shadow:0 0 30px rgba(255,140,26,.35)}
+.orn{display:block;width:min(260px,64vw);height:auto;margin:1rem auto 0;overflow:visible}
+.story__hint{margin-top:.9rem;font:600 .8rem/1.4 var(--body);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,244,214,.8)}
+.cue{display:block;width:12px;height:12px;margin:1rem auto 0;border-right:2.5px solid var(--gold);border-bottom:2.5px solid var(--gold);rotate:45deg;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{translate:0 0;opacity:.3}50%{translate:0 8px;opacity:1}}
+.scene{position:relative;height:200vh;height:200svh;background:var(--deep)}
+.scene--battle{height:320vh;height:320svh}
+.scene--return{height:230vh;height:230svh}
+/* every picture sits whole inside a gold-edged frame (nothing is cropped), centred under the title bar; the camera only breathes a few percent */
+.stage{--ftop:clamp(58px,10cqh,200px);--fbot:clamp(14px,3.4cqh,34px);--glow:rgba(255,160,50,.38);
+  --fw:min(91cqw,calc((100cqh - var(--ftop) - var(--fbot))*16/9));--fh:calc(var(--fw)*9/16);
+  --fx:calc((100cqw - var(--fw))/2);--fy:calc(var(--ftop) + (100cqh - var(--ftop) - var(--fbot) - var(--fh))/2);
+  position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;isolation:isolate;container-type:size;
+  background:radial-gradient(ellipse at 50% 46%,#1a2562 0%,#0d1540 52%,#050818 100%)}
+.stage::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.85;background-size:260px 260px;animation:twinkle 5s ease-in-out infinite alternate;
+  background-image:radial-gradient(1.3px 1.3px at 12% 18%,#fff 50%,transparent 56%),radial-gradient(1.7px 1.7px at 63% 62%,var(--cream) 50%,transparent 56%),
+  radial-gradient(1px 1px at 81% 28%,#fff 50%,transparent 56%),radial-gradient(1.5px 1.5px at 38% 84%,var(--gold) 50%,transparent 56%)}
+.stage__bg{display:none}
+.frame{position:absolute;z-index:1;left:var(--fx);top:var(--fy);width:var(--fw);height:var(--fh);overflow:hidden;border-radius:1.7rem .35rem 1.7rem .35rem;
+  box-shadow:0 0 0 1px rgba(255,209,102,.62),0 0 0 6px rgba(8,13,38,.8),0 0 0 7px rgba(255,209,102,.26),0 30px 70px -20px rgba(0,0,0,.9),0 0 96px -16px var(--glow)}
+.pan{position:absolute;inset:0;transform-origin:50% 50%}
+.art{position:absolute;inset:0}
+.art>img,.art>svg,.art>.shade{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fx,.shade{pointer-events:none}
+.fx .sunrise,.fx .burst{mix-blend-mode:screen}
+.frame::after{content:"";position:absolute;inset:0;z-index:6;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 64px rgba(5,8,26,.38)}
+#scene-exile .stage{--glow:rgba(255,160,50,.46)}
+#scene-abduct .stage{--glow:rgba(255,196,80,.3)}
+#scene-jatayu .stage{--glow:rgba(255,128,40,.46)}
+#scene-hanuman .stage{--glow:rgba(110,200,235,.34)}
+#scene-battle .stage{--glow:rgba(255,170,60,.34)}
+#scene-return .stage{--glow:rgba(255,196,80,.5)}
+.deer-shine{opacity:0;animation:deershine 6s ease-in-out 1.4s infinite}
+@keyframes deershine{0%{transform:translateX(0);opacity:0}7%{opacity:.75}32%{transform:translateX(120px);opacity:.75}38%{transform:translateX(132px);opacity:0}100%{transform:translateX(132px);opacity:0}}
+.overlay{position:absolute;inset:0;pointer-events:none}
+.dark{background:radial-gradient(ellipse at 45% 46%,rgba(5,8,26,.15) 25%,rgba(5,8,26,.92));opacity:.25}
+.tint{background:linear-gradient(180deg,rgba(255,170,60,0) 10%,rgba(255,94,20,.55));mix-blend-mode:overlay;opacity:0}
+.wash{background:radial-gradient(ellipse at 50% 100%,rgba(255,170,40,.55),rgba(255,140,26,.18) 55%,transparent 80%);mix-blend-mode:screen;opacity:0}
+.flash{background:radial-gradient(circle at 80% 32%,#fffbe8 0,#ffe29a 25%,var(--gold) 55%,var(--saffron));opacity:0}
+.tcard{position:absolute;z-index:5;width:min(28rem,calc(100% - var(--gutL) - var(--gutR)));padding:1.2rem 1.45rem 1.4rem;
+  background:linear-gradient(150deg,rgba(10,18,48,.8),rgba(59,23,109,.64));backdrop-filter:blur(10px) saturate(1.2);-webkit-backdrop-filter:blur(10px) saturate(1.2);
+  border:1px solid rgba(255,209,102,.4);border-radius:var(--petal);box-shadow:0 26px 60px -22px rgba(0,0,0,.7),0 0 0 1px rgba(255,209,102,.07) inset}
+.tcard h3{font:400 clamp(1.4rem,2.2vw,2rem)/1.15 var(--display);color:var(--gold);margin:.35rem 0 .65rem}
+.tcard p{font-size:clamp(.97rem,1.12vw,1.1rem);line-height:1.5}
+/* cards sit just inside the corners of the picture frame */
+.tcard--tr{top:calc(var(--fy) + 1rem);right:calc(var(--fx) + 1rem)}
+.tcard--tl{top:calc(var(--fy) + 1rem);left:calc(var(--fx) + 1rem)}
+.tcard--bl{bottom:calc(100cqh - var(--fy) - var(--fh) + 1rem);left:calc(var(--fx) + 1rem)}
+.tcard--br{bottom:calc(100cqh - var(--fy) - var(--fh) + 1rem);right:calc(var(--fx) + 1rem)}
+.tcard--bc{bottom:calc(100cqh - var(--fy) - var(--fh) + 1rem);left:0;right:0;margin-inline:auto}
+@media (min-width:821px) and (max-height:760px){
+  .tcard{width:min(24.5rem,calc(100% - var(--gutL) - var(--gutR)));padding:.85rem 1.15rem 1rem}
+  .tcard h3{font-size:1.35rem;margin:.25rem 0 .45rem}
+  .tcard p{font-size:.93rem;line-height:1.42}
+  .tcard .eyebrow{font-size:.7rem}
+}
+.leaves,.feathers,.wind{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.leaf{position:absolute;top:-8%;left:var(--x);animation:fall var(--d) linear var(--delay) infinite}
+.leaf i{display:block;width:var(--s);height:calc(var(--s)*1.5);border-radius:0 100% 0 100%;background:linear-gradient(135deg,var(--c),rgba(53,104,89,.9));opacity:.85;animation:sway calc(var(--d)/3) ease-in-out var(--delay) infinite alternate}
+.feather{position:absolute;top:-8%;left:var(--x);animation:fall var(--d) linear var(--delay) infinite}
+.feather i{display:block;width:calc(var(--s)*.34);height:calc(var(--s)*1.5);border-radius:100% 0 100% 0/90% 0 90% 0;background:linear-gradient(180deg,var(--cream),#e8a860 70%,#b8622b);opacity:.85;animation:sway calc(var(--d)/2.6) ease-in-out var(--delay) infinite alternate}
+.windline{position:absolute;left:-30%;width:34%;height:12px;top:var(--y);border-radius:50%;background:radial-gradient(closest-side,rgba(255,244,214,.34),rgba(255,244,214,.12) 55%,transparent);opacity:0;animation:wind var(--d) linear var(--delay) infinite}
+@keyframes fall{from{transform:translateY(0)}to{transform:translateY(118svh)}}
+@keyframes sway{from{transform:translateX(calc(var(--w)*-1)) rotate(-35deg)}to{transform:translateX(var(--w)) rotate(48deg)}}
+@keyframes wind{0%{transform:translateX(0) scaleX(.6);opacity:0}18%{opacity:.7}100%{transform:translateX(390%) scaleX(1.5);opacity:0}}
+.fx .twk{animation:twinkle 2.4s ease-in-out infinite alternate}
+.fx .shimmer{animation:shimmer 4.2s ease-in-out infinite alternate}
+@keyframes shimmer{from{opacity:.05;transform:translateX(-26px)}to{opacity:.55;transform:translateX(26px)}}
+#fw-return{position:absolute;inset:0;width:100%;height:60%}
+
+/* ---------- the festival of lights ---------- */
+.festival{--lit:0;position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:var(--deep);isolation:isolate}
+.festival__bg{position:absolute;inset:-3%;z-index:-3}
+.festival__bg img{width:100%;height:100%;object-fit:cover;filter:brightness(calc(.82 + var(--lit)*.4)) saturate(calc(1 + var(--lit)*.25))}
+.festival__shade{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 50% 30%,rgba(10,18,48,.72),rgba(10,18,48,.18) 62%),linear-gradient(180deg,rgba(10,18,48,.55),transparent 30%,transparent 70%,rgba(10,18,48,.4))}
+.festival .stars{z-index:-1;-webkit-mask-image:linear-gradient(to bottom,#000 0,#000 40%,transparent 56%);mask-image:linear-gradient(to bottom,#000 0,#000 40%,transparent 56%)}
+.festival__lit{position:absolute;inset:0;z-index:-1;pointer-events:none;mix-blend-mode:screen;opacity:calc(var(--lit)*.85);
+  background:radial-gradient(ellipse at 50% 78%,rgba(255,226,154,.75),rgba(255,140,26,.4) 40%,transparent 74%)}
+.festival__copy{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.1rem;
+  padding-block:calc(13svh + env(safe-area-inset-top,0px)) 4rem;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.festival h2{font:400 clamp(2.4rem,6.6vw,5.4rem)/1.02 var(--display);color:var(--gold);text-shadow:0 0 40px rgba(255,140,26,.55),0 4px 20px rgba(5,8,26,.8)}
+.festival__msg{max-width:34rem;font-size:clamp(1.1rem,1.8vw,1.4rem);text-shadow:0 2px 16px rgba(5,8,26,.95)}
+.diya-count{min-height:1.5em;font:600 .85rem/1.5 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-shadow:0 2px 10px rgba(5,8,26,.9)}
+#diya-field{position:absolute;inset:0;z-index:1;pointer-events:none}
+.fdiya{position:absolute;translate:-50% -50%;width:calc(var(--s,40)*1px);animation:pop .8s cubic-bezier(.2,1.3,.3,1) both}
+@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* ---------- how to celebrate ---------- */
+.celebrate{position:relative;padding-block:clamp(4rem,10svh,7rem);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  background:radial-gradient(ellipse at 50% 0,var(--purple) 0,var(--navy) 55%,var(--deep))}
+.celebrate__wrap{max-width:76rem;margin-inline:auto}
+.celebrate h2{font:400 clamp(2.1rem,5vw,3.8rem)/1.08 var(--display);color:var(--gold);text-align:center}
+.celebrate .orn{margin:1rem auto clamp(2rem,5vw,3.2rem)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.2rem,2.4vw,2rem);align-items:start}
+.card{position:relative;display:flex;flex-direction:column;min-width:0;background:linear-gradient(180deg,rgba(59,23,109,.5),rgba(10,18,48,.85));
+  border:1px solid rgba(255,209,102,.32);border-radius:var(--petal);overflow:hidden;transition:box-shadow .5s,border-color .5s}
+.card:hover,.card.is-lit{border-color:rgba(255,209,102,.85);box-shadow:0 0 0 1px rgba(255,209,102,.4),0 0 60px rgba(255,140,26,.45),0 30px 70px -30px rgba(0,0,0,.8)}
+.card__stage{position:relative;aspect-ratio:4/5;max-width:100%;overflow:hidden;border-radius:48% 48% 0 0/13% 13% 0 0;background:var(--deep)}
+.card__stage>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease,filter .8s}
+.card:hover .card__stage>img,.card.is-lit .card__stage>img{transform:scale(1.05)}
+.card--diya:hover .card__stage>img,.card--diya.is-lit .card__stage>img{filter:brightness(1.12) saturate(1.15)}
+.card__body{display:flex;flex-direction:column;gap:.7rem;padding:1.3rem 1.4rem 1.5rem}
+.card__body h3{font:400 clamp(1.4rem,2vw,1.8rem)/1.15 var(--display);color:var(--gold)}
+.card__body p{font-size:1.05rem}
+.card__row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:.4rem}
+.hit{position:absolute;inset:0;z-index:3;width:100%;background:none;border:0;cursor:pointer;padding:0}
+.hit:focus-visible{outline-offset:-6px}
+.flameglow{position:absolute;z-index:2;width:34%;aspect-ratio:1;translate:-50% -50%;scale:.55;border-radius:50%;pointer-events:none;mix-blend-mode:screen;
+  background:radial-gradient(circle,rgba(255,236,190,.95),rgba(255,140,26,.55) 32%,transparent 66%);transition:scale .7s cubic-bezier(.2,.8,.2,1),opacity .7s;opacity:.55;animation:breathe 2.2s ease-in-out infinite alternate}
+.card--diya:hover .flameglow,.card--diya.is-lit .flameglow{scale:1.45;opacity:1}
+.cardhint{font:600 .78rem/1.3 var(--body);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,244,214,.62)}
+.petals{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2}
+.petal{position:absolute;top:-8%;left:var(--x);animation:fall var(--d) linear var(--delay) infinite}
+.petal i{display:block;width:var(--s);height:calc(var(--s)*1.3);border-radius:100% 0 100% 0;background:var(--c);opacity:.9;animation:sway calc(var(--d)/3) ease-in-out var(--delay) infinite alternate}
+#rg-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:4;display:none;touch-action:none;cursor:crosshair}
+.card--rangoli.is-designing #rg-canvas{display:block}
+.card--rangoli.is-designing .petals{display:none}
+.rg-tools{display:none;flex-direction:column;gap:.7rem}
+.card--rangoli.is-designing .rg-tools{display:flex}
+.swatches{display:flex;gap:.55rem;flex-wrap:wrap}
+.swatch{width:44px;height:44px;border-radius:50% 12% 50% 12%;border:2px solid rgba(255,244,214,.5);cursor:pointer;background:var(--c);padding:0}
+.swatch[aria-pressed="true"]{border-color:#fff;box-shadow:0 0 0 3px var(--c),0 0 18px var(--c)}
+.wish{min-height:3.8em;font:400 1.15rem/1.45 var(--display);color:var(--cream)}
+
+/* ---------- thank you ---------- */
+.thanks{--sh:max(100vh,660px);--sh:max(100svh,660px);--aw:calc(var(--sh)*9/16);--zw:calc((100% - var(--aw))/2);position:relative;height:var(--sh);overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% 70%,#16255a,var(--navy) 55%,var(--deep))}
+.thanks>.stars{z-index:0}
+.thanks__art{position:absolute;z-index:1;top:0;height:100%;aspect-ratio:9/16;left:50%;translate:-50% 0;background:#0b1233;box-shadow:0 0 0 1px rgba(255,209,102,.6),0 0 0 7px rgba(8,13,38,.72),0 0 0 8px rgba(255,209,102,.22),0 0 64px 4px rgba(255,140,26,.26)}
+.thanks__art img{width:100%;height:100%;object-fit:cover}
+.thanks .side{z-index:2}
+.thanks .swag,.thanks .friend,.thanks .friend .cbubble{animation-play-state:paused}
+.thanks.is-in .swag,.thanks.is-in .friend,.thanks.is-in .friend .cbubble{animation-play-state:running}
+#fw-thanks{z-index:2;height:64%}
+#em-thanks{z-index:2}
+.marigolds{position:absolute;inset:0;z-index:2;overflow:hidden;pointer-events:none}
+.marigolds .petal i{border-radius:100% 0 100% 0;box-shadow:inset -2px -2px 0 rgba(180,80,10,.35)}
+.thanks__copy{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.1rem;
+  padding-block:calc(11svh + env(safe-area-inset-top,0px)) calc(8svh + env(safe-area-inset-bottom,0px));
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.thanks__t1{font:400 clamp(1.7rem,3.6vw,2.8rem)/1.2 var(--display);color:var(--gold);max-width:26rem;text-shadow:0 0 30px rgba(255,140,26,.45),0 2px 14px rgba(5,8,26,.9)}
+.thanks__t2{font-size:clamp(1.05rem,1.5vw,1.25rem);max-width:26rem;text-shadow:0 2px 14px rgba(5,8,26,.95)}
+.greet{position:relative;flex:none;width:min(100%,24rem);height:3.5rem;margin-top:.2rem}
+.greet__i{position:absolute;inset:0;display:grid;justify-items:center;align-content:center;gap:.15rem;opacity:0;animation:greet 24s ease-in-out infinite;animation-delay:calc(var(--i)*2.4s)}
+.greet__i b{font:400 clamp(1.25rem,2vw,1.6rem)/1.2 var(--display);color:#FFE29A;text-shadow:0 0 22px rgba(255,140,26,.7),0 2px 10px rgba(5,8,26,.95)}
+.greet__i i{font:600 .68rem/1 var(--body);font-style:normal;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,244,214,.72)}
+@keyframes greet{0%{opacity:0;transform:translateY(10px) scale(.96)}1.6%{opacity:1;transform:none}8.4%{opacity:1;transform:none}10%{opacity:0;transform:translateY(-8px) scale(.98)}100%{opacity:0}}
+.thanks__credit{font:600 .9rem/1.4 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--gold);text-shadow:0 2px 10px rgba(5,8,26,.95)}
+.thanks__spacer{flex:1 1 auto;min-height:0}
+@media (min-width:821px) and (min-aspect-ratio:5/4){.thanks .side{display:block}}
+.page-glow{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:0;mix-blend-mode:screen;background:radial-gradient(ellipse at 50% 100%,rgba(255,209,102,.9),rgba(255,140,26,.35) 45%,transparent 75%)}
+
+/* ---------- portrait / phone layout ---------- */
+@media (max-width:820px),(max-aspect-ratio:5/4){
+  :root{--ctlw:176px}
+  #btn-motion span{display:none}
+  #btn-motion{padding:0;width:44px;justify-content:center}
+  .progress{left:var(--gutL);right:calc(10px + var(--ctlw) + 8px + env(safe-area-inset-right,0px));top:calc(10px + env(safe-area-inset-top,0px));translate:none}
+  .progress ol{flex-direction:row;padding:0;gap:4px;background:none;border:0;backdrop-filter:none;-webkit-backdrop-filter:none}
+  .progress li{flex:1}
+  .progress a{width:auto;height:22px}
+  .progress .dot,.progress .lbl{display:none}
+  .progress a::before{content:"";display:block;width:100%;height:4px;border-radius:3px;background:currentColor;opacity:.5}
+  .progress a[aria-current="step"]::before{opacity:1;background:var(--gold)}
+  .progress__now{display:block;font:600 .7rem/1.2 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--gold);text-shadow:0 1px 6px rgba(5,8,26,.9)}
+
+  .hero__art{width:100%;left:0;translate:none}
+  .hero__art>img{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 26%);mask-image:linear-gradient(to bottom,transparent 0,#000 26%)}
+  .hero__copy{top:calc(14svh + env(safe-area-inset-top,0px));width:100%;padding:0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px))}
+  .hero h1{font-size:clamp(2.8rem,14vw,4.6rem)}
+  .hero__sub{font-size:1.1rem}
+
+  .stage{display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,2.4svh,22px);padding:calc(66px + env(safe-area-inset-top,0px)) 0 calc(18px + env(safe-area-inset-bottom,0px))}
+  .stage::before{display:none}
+  .stage::after{content:"";position:absolute;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));width:12px;height:12px;margin-left:-6px;border-right:2.5px solid var(--gold);border-bottom:2.5px solid var(--gold);rotate:45deg;opacity:.7;animation:cue 1.8s ease-in-out infinite;pointer-events:none}
+  .stage__bg{display:block;position:absolute;inset:-12%;width:124%;height:124%;object-fit:cover;filter:blur(26px) saturate(1.3) brightness(.5)}
+  .frame{position:relative;left:auto;top:auto;flex:none;width:auto;height:auto;aspect-ratio:16/9;margin-inline:calc(var(--gutL) + 4px) calc(var(--gutR) + 4px);z-index:1}
+  .tcard[class]{position:relative;inset:auto;margin:0 var(--gutR) 0 var(--gutL);width:auto;padding:1.1rem 1.25rem 1.3rem}
+  .tcard h3{margin:.3rem 0 .5rem}
+  .tcard p{font-size:1.02rem;line-height:1.5}
+  .m-copy{top:52%}
+  .m-diya{top:27%;width:min(52vw,240px)}
+  .m-lamps{top:18%;bottom:46%;width:clamp(30px,10vw,52px)}
+  .cards{grid-template-columns:1fr;max-width:30rem;margin-inline:auto}
+  .festival__copy{padding-top:calc(12svh + env(safe-area-inset-top,0px))}
+  .thanks__art{width:100%;aspect-ratio:auto;left:0;translate:none;box-shadow:none}
+  .thanks .side{display:block;width:50%;overflow:visible}
+  .thanks .side::before{display:none}
+  .thanks .swag{top:calc(34px + env(safe-area-inset-top,0px))}
+  .thanks .friend{left:4%;translate:none;bottom:25svh;width:32vw;gap:.5rem}
+  .thanks .side--r .friend{left:auto;right:4%}
+  .thanks .friend .cbubble{font-size:11.5px}
+  .thanks__t1{margin-top:1.4rem}
+}
+@media (min-width:821px) and (max-width:1100px) and (min-aspect-ratio:5/4){
+  .cards{gap:1rem}
+  .card__body{padding:1.1rem 1rem 1.3rem}
+}
+
+/* ---------- reduced motion ---------- */
+html[data-motion="reduced"]{scroll-behavior:auto}
+html[data-motion="reduced"] *,html[data-motion="reduced"] *::before,html[data-motion="reduced"] *::after{animation:none!important;transition:none!important}
+html[data-motion="reduced"] .leaves,html[data-motion="reduced"] .feathers,html[data-motion="reduced"] .wind,html[data-motion="reduced"] .petals,html[data-motion="reduced"] .marigolds,html[data-motion="reduced"] .fxcanvas{display:none}
+html[data-motion="reduced"] .greet__i:first-child{opacity:1}
+html[data-motion="reduced"] .scene,html[data-motion="reduced"] .scene--battle,html[data-motion="reduced"] .scene--return,html[data-motion="reduced"] .meaning{height:auto}
+html[data-motion="reduced"] .stage,html[data-motion="reduced"] .m-stage{position:relative}
+html[data-motion="reduced"] .m-stage{min-height:100svh}
+html.nogsap .loader{display:none}
+
+</style>
+<script>document.documentElement.classList.add('is-loading');setTimeout(function(){if(!window.__diwaliBooted){var r=document.documentElement;r.classList.add('nogsap');r.classList.remove('is-loading')}},10000);</script>
+<svg class="defs" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="gGlowGold"><stop offset="0" stop-color="#FFE29A" stop-opacity=".95"/><stop offset=".4" stop-color="#FF8C1A" stop-opacity=".45"/><stop offset="1" stop-color="#FF5E14" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gGlowRed"><stop offset="0" stop-color="#FF3B1F" stop-opacity=".85"/><stop offset=".5" stop-color="#B42318" stop-opacity=".35"/><stop offset="1" stop-color="#B42318" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gGlowWhite"><stop offset="0" stop-color="#FFFBE8"/><stop offset=".3" stop-color="#FFD166" stop-opacity=".8"/><stop offset="1" stop-color="#FF8C1A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gHole"><stop offset="0" stop-color="#000"/><stop offset=".55" stop-color="#000"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <linearGradient id="gFlame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4D6"/><stop offset=".35" stop-color="#FFD166"/><stop offset=".78" stop-color="#FF8C1A"/><stop offset="1" stop-color="#FF5E14"/></linearGradient>
+    <linearGradient id="gClay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5793C"/><stop offset=".55" stop-color="#B64A1B"/><stop offset="1" stop-color="#6E2710"/></linearGradient>
+    <linearGradient id="gTrail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFD166" stop-opacity="0"/><stop offset="1" stop-color="#FFF4D6"/></linearGradient>
+    <radialGradient id="gLaddu" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#FFC65A"/><stop offset=".6" stop-color="#F08A1B"/><stop offset="1" stop-color="#C7560E"/></radialGradient>
+    <linearGradient id="gOrnL" x1="0" x2="1"><stop offset="0" stop-color="#FFD166" stop-opacity="0"/><stop offset="1" stop-color="#FFD166" stop-opacity=".9"/></linearGradient>
+    <linearGradient id="gOrnR" x1="0" x2="1"><stop offset="0" stop-color="#FFD166" stop-opacity=".9"/><stop offset="1" stop-color="#FFD166" stop-opacity="0"/></linearGradient>
+    <symbol id="i-laddu" viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="url(#gLaddu)"/><circle cx="13" cy="13" r="1.6" fill="#F8DE9A"/><circle cx="24" cy="11" r="1.4" fill="#F8DE9A"/><circle cx="28" cy="22" r="1.6" fill="#F8DE9A"/><circle cx="15" cy="26" r="1.5" fill="#F8DE9A"/><circle cx="21" cy="20" r="2.4" fill="#7BA05B"/></symbol>
+    <symbol id="i-katli" viewBox="0 0 48 40"><path d="M24 2 46 20 24 38 2 20z" fill="#F4EDDA" stroke="#C9CFD8" stroke-width="2.2" stroke-linejoin="round"/><path d="M24 7 40 20 24 33 8 20z" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1.4"/><circle cx="24" cy="20" r="2.6" fill="#7BA05B"/></symbol>
+    <symbol id="i-jalebi" viewBox="0 0 40 40"><path d="M20 20c0-3 4-3 4 0 0 5-8 5-8-1 0-6 11-6 11 1 0 9-15 9-15-1 0-10 19-10 19 1" fill="none" stroke="#FF8C1A" stroke-width="4.2" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ controls ============ -->
+<div class="controls">
+  <button id="btn-sound" class="pill" type="button" aria-pressed="false" aria-label="Sound: Off. Press to turn the background music on">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path class="waves" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/><path class="mute" d="m16 9 5 5m0-5-5 5"/></svg>
+    <span id="sound-label">Sound: Off</span>
+  </button>
+  <button id="btn-motion" class="pill" type="button" aria-pressed="false" aria-label="Reduce motion: Off">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1.2"/><rect x="14" y="5" width="4" height="14" rx="1.2"/></svg>
+    <span id="motion-label">Reduce motion</span>
+  </button>
+</div>
+<nav class="progress" id="progress" aria-label="Story progress"><ol id="progress-list"></ol><div class="progress__now" id="progress-now" aria-hidden="true"></div></nav>
+<div class="page-glow" id="page-glow" aria-hidden="true"></div>
+
+<!-- ============ <LoadingScreen /> ============ -->
+<div id="loader" class="loader" role="status" aria-live="polite" aria-label="Preparing the lights of Diwali">
+  <div class="loader__half loader__half--l"><div class="loader__view"><div class="loader__art"><img src="assets/loader-lg.webp" srcset="assets/loader-sm.webp 640w, assets/loader-lg.webp 1080w" sizes="(max-width:820px) 100vw, 60vw" width="1080" height="1920" alt="" decoding="async"></div>
+    <div class="side side--l" aria-hidden="true">
+      <div class="swag"><div data-bunting></div><div class="lantern" data-lantern="a"></div></div>
+      <div class="friend">
+        <div class="cbubble"><b lang="en">Namaste!</b><span lang="hi">नमस्ते</span></div>
+        <div class="mascotbox" data-mascot="a"></div>
+      </div>
+    </div></div></div>
+  <div class="loader__half loader__half--r"><div class="loader__view"><div class="loader__art"><img src="assets/loader-lg.webp" srcset="assets/loader-sm.webp 640w, assets/loader-lg.webp 1080w" sizes="(max-width:820px) 100vw, 60vw" width="1080" height="1920" alt="" decoding="async"></div>
+    <div class="side side--r" aria-hidden="true">
+      <div class="swag swag--r"><div data-bunting></div><div class="lantern" data-lantern="b"></div></div>
+      <div class="friend">
+        <div class="cbubble cbubble--r"><b lang="en">Welcome!</b><span lang="hi">शुभ दीपावली</span></div>
+        <div class="mascotbox" data-mascot="b"></div>
+      </div>
+    </div></div></div>
+  <div class="loader__top">
+    <div class="loader__art">
+      <svg class="loader__lines" id="loader-lines" viewBox="0 0 1440 2560" aria-hidden="true" focusable="false"></svg>
+      <span class="softglow lglow" style="left:18.4%;top:30.4%"></span><span class="softglow lglow" style="left:81.2%;top:30.4%"></span>
+      <span class="softglow lglow" style="left:16%;top:59.4%"></span><span class="softglow lglow" style="left:83.8%;top:59.4%"></span>
+    </div>
+    <canvas id="em-loader" class="fxcanvas" aria-hidden="true"></canvas>
+    <div class="loader__ui">
+      <p class="loader__text">Preparing the lights of Diwali...</p>
+      <div class="flamebar" id="flamebar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Loading"><div class="flamebar__fill"></div><div class="flamebar__flame"></div></div>
+      <p class="loader__pct" id="loader-pct">0%</p>
+    </div>
+  </div>
+  <div class="loader__seam" id="loader-seam"></div>
+</div>
+
+<main id="top">
+<!-- ============ <HeroSection /> ============ -->
+<section id="hero" class="hero" aria-label="Happy Diwali">
+  <div class="stars" id="hero-stars" aria-hidden="true"></div>
+  <div class="hero__art" id="hero-art">
+    <img src="assets/hero-lg.webp" srcset="assets/hero-sm.webp 960w, assets/hero-lg.webp 1920w" sizes="100vw" width="1920" height="1080" fetchpriority="high" decoding="async"
+      alt="Lord Ganesha on the left and Goddess Lakshmi on the right, seated beside a glowing diya with fireworks above a lamp-lit palace by the water">
+    <span class="softglow hero__glow hero__glow--l"></span><span class="softglow hero__glow hero__glow--r"></span>
+  </div>
+  <canvas id="fw-hero" class="fxcanvas" aria-hidden="true"></canvas>
+  <canvas id="em-hero" class="fxcanvas" aria-hidden="true"></canvas>
+  <div class="hero__copy">
+    <h1 id="hero-title">Happy Diwali</h1>
+    <p class="hero__sub" id="hero-sub">A celebration of light, hope, love, and the victory of good over evil.</p>
+    <button class="btn" id="btn-begin" type="button">Begin the Story</button>
+  </div>
+</section>
+
+<!-- ============ <MeaningSection /> ============ -->
+<section id="meaning" class="meaning" aria-labelledby="meaning-title">
+  <div class="m-stage" id="m-stage">
+    <div class="m-gold"></div>
+    <div class="m-night" id="m-night"><div class="stars" aria-hidden="true"></div></div>
+    <div class="m-lamps m-lamps--l" id="m-lamps-l" aria-hidden="true"></div>
+    <div class="m-lamps m-lamps--r" id="m-lamps-r" aria-hidden="true"></div>
+    <div class="m-diya" id="m-diya" aria-hidden="true"></div>
+    <div class="m-copy" id="m-copy">
+      <h2 class="eyebrow" id="meaning-title">Why Diwali Is Celebrated</h2>
+      <p>Diwali, the festival of lights, celebrates the victory of light over darkness, good over evil, and knowledge over ignorance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ <StoryTimeline /> ============ -->
+<section id="story" class="story" aria-labelledby="story-title">
+  <div class="story__intro"><h2 id="story-title">The Ramayana Story</h2>
+    <svg class="orn" viewBox="0 0 260 22" aria-hidden="true" focusable="false"><rect x="0" y="10.2" width="104" height="1.6" fill="url(#gOrnL)"/><rect x="156" y="10.2" width="104" height="1.6" fill="url(#gOrnR)"/><path d="M130 1 141 11 130 21 119 11Z" fill="#FFD166"/><path d="M130 6 136 11 130 16 124 11Z" fill="#B42318"/><circle cx="110" cy="11" r="3" fill="#FFD166"/><circle cx="150" cy="11" r="3" fill="#FFD166"/></svg>
+    <p class="story__hint">Scroll slowly and follow Ram’s journey home</p>
+    <span class="cue" aria-hidden="true"></span></div>
+
+  <!-- <ExileScene /> -->
+  <article class="scene" id="scene-exile" aria-labelledby="s1-title">
+    <div class="stage">
+      <img class="stage__bg" src="assets/exile-sm.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="frame">
+        <div class="pan"><div class="art">
+          <img class="shot" src="assets/exile-lg.webp" srcset="assets/exile-sm.webp 960w, assets/exile-lg.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async"
+            alt="Ram, Sita and Lakshman walking along a forest path at golden sunset at the start of their fourteen-year exile">
+          <svg class="fx" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true"><circle class="sunglow" cx="1258" cy="486" r="440" fill="url(#gGlowGold)" opacity=".3"/></svg>
+        </div></div>
+        <div class="leaves" data-n="14" aria-hidden="true"></div>
+      </div>
+      <div class="tcard tcard--tr">
+        <p class="eyebrow">Exile</p>
+        <h3 id="s1-title">Ram Goes Into Exile</h3>
+        <p>Lord Ram began his fourteen-year exile with Sita and Lakshman. Their journey through the forest marked the beginning of a great story.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- <SitaAbductionScene /> -->
+  <article class="scene" id="scene-abduct" aria-labelledby="s2-title">
+    <div class="stage">
+      <img class="stage__bg" src="assets/abduct-sm.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="frame">
+        <div class="pan"><div class="art">
+          <img class="shot" src="assets/abduct-lg.webp" srcset="assets/abduct-sm.webp 960w, assets/abduct-lg.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async"
+            alt="Sita beside the forest hut at dusk, watching a glowing golden deer while the crowned figure of Ravana waits in the shadows at the edge of the scene">
+          <div class="shade dark" aria-hidden="true"></div>
+          <svg class="fx" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <mask id="deerMask" maskUnits="userSpaceOnUse" x="840" y="360" width="240" height="240"><image href="assets/deer-matte.webp" x="840" y="360" width="240" height="240" preserveAspectRatio="none"/></mask>
+              <linearGradient id="gShine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFF4D6" stop-opacity="0"/><stop offset=".5" stop-color="#FFEBB0" stop-opacity=".72"/><stop offset="1" stop-color="#FFF4D6" stop-opacity="0"/></linearGradient>
+            </defs>
+            <image class="deer-gold" href="assets/deer-gold.webp" x="840" y="360" width="240" height="240" preserveAspectRatio="none"/>
+            <g mask="url(#deerMask)"><polygon class="deer-shine" points="926,410 950,410 922,560 898,560" fill="url(#gShine)"/></g>
+          </svg>
+        </div></div>
+      </div>
+      <div class="tcard tcard--tl">
+        <p class="eyebrow">Sita’s Abduction</p>
+        <h3 id="s2-title">Sita Is Abducted</h3>
+        <p>During their exile, Sita was taken away by Ravana, beginning Ram’s search for justice and truth.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- <JatayuScene /> -->
+  <article class="scene" id="scene-jatayu" aria-labelledby="s3-title">
+    <div class="stage">
+      <img class="stage__bg" src="assets/jatayu-sm.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="frame">
+        <div class="pan"><div class="art">
+          <img class="shot" src="assets/jatayu-lg.webp" srcset="assets/jatayu-sm.webp 960w, assets/jatayu-lg.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async"
+            alt="Jatayu, the great eagle, flying across a glowing sunset sky above a river valley while Ram looks up with his hand on his heart">
+        </div></div>
+        <div class="overlay tint" aria-hidden="true"></div>
+        <div class="wind" data-n="7" aria-hidden="true"></div>
+        <div class="feathers" data-n="9" aria-hidden="true"></div>
+      </div>
+      <div class="tcard tcard--bl">
+        <p class="eyebrow">Jatayu’s Sacrifice</p>
+        <h3 id="s3-title">Ram and Jatayu</h3>
+        <p>Jatayu bravely tried to protect Sita. His courage became an important part of Ram’s journey.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- <HanumanScene /> -->
+  <article class="scene" id="scene-hanuman" aria-labelledby="s4-title">
+    <div class="stage">
+      <img class="stage__bg" src="assets/hanuman-sm.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="frame">
+        <div class="pan"><div class="art">
+          <img class="shot" src="assets/hanuman-lg.webp" srcset="assets/hanuman-sm.webp 960w, assets/hanuman-lg.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async"
+            alt="Hanuman kneeling with folded hands before Ram and Lakshman on a mountain, with the ocean and the golden city of Lanka in the distance">
+          <svg class="fx" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+            <g class="sea"></g>
+            <path class="gpath2" d="M527 513C700 180 1250 150 1738 478" fill="none" stroke="#FF8C1A" stroke-width="30" stroke-opacity=".3" stroke-linecap="round" stroke-dasharray="4000" stroke-dashoffset="4000"/>
+            <path class="gpath" d="M527 513C700 180 1250 150 1738 478" fill="none" stroke="#FFF1C2" stroke-width="5" stroke-linecap="round" stroke-dasharray="4000" stroke-dashoffset="4000" style="filter:drop-shadow(0 0 8px #FFD166)"/>
+            <g class="gtrail" opacity="0"></g>
+            <circle class="glanding" cx="1738" cy="478" r="90" fill="url(#gGlowWhite)" opacity="0"/>
+            <g class="gorb" opacity="0"><circle r="100" fill="url(#gGlowWhite)"/><circle r="15" fill="#FFFDF3"/></g>
+          </svg>
+        </div></div>
+      </div>
+      <div class="tcard tcard--br">
+        <p class="eyebrow">The Search for Sita</p>
+        <h3 id="s4-title">Hanuman Helps Ram Find Sita</h3>
+        <p>With devotion, courage, and the help of Hanuman and his allies, Ram continued his search for Sita.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- <RavanaBattleScene /> -->
+  <article class="scene scene--battle" id="scene-battle" aria-labelledby="s5-title">
+    <div class="stage">
+      <img class="stage__bg" src="assets/battle-sm.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="frame">
+        <div class="pan"><div class="art">
+          <img class="shot" src="assets/battle-lg.webp" srcset="assets/battle-sm.webp 960w, assets/battle-lg.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async"
+            alt="Ram drawing a glowing golden arrow toward the towering ten-headed Ravana across a stormy twilight sky, with Hanuman and the vanara army below">
+          <svg class="fx" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+            <image class="plate" href="assets/battle-clean.webp" x="1400" y="30" width="520" height="550" preserveAspectRatio="none" opacity="0"/>
+            <circle class="nockglow" cx="634" cy="308" r="30" fill="url(#gGlowWhite)" opacity="0"/>
+            <circle class="sunrise" cx="1750" cy="198" r="600" fill="url(#gGlowGold)" opacity="0"/>
+            <g class="arrow" opacity="0"><rect x="-340" y="-3.5" width="340" height="7" fill="url(#gTrail)"/><path d="M0-15 52 0 0 15 11 0z" fill="#FFF4D6"/><circle r="46" fill="url(#gGlowWhite)"/></g>
+            <circle class="ring" cx="1610" cy="340" r="40" fill="none" stroke="#FFF4D6" stroke-width="10" opacity="0"/>
+            <circle class="burst" cx="1610" cy="340" r="60" fill="url(#gGlowWhite)" opacity="0"/>
+            <g class="bsparks"></g>
+          </svg>
+        </div></div>
+        <div class="overlay flash" aria-hidden="true"></div>
+      </div>
+      <div class="tcard tcard--bc">
+        <p class="eyebrow">The Battle</p>
+        <h3 id="s5-title">Ram Faces Ravana</h3>
+        <p>The battle represented the victory of righteousness over evil. With courage and truth, Ram defeated Ravana.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- <ReturnToAyodhyaScene /> -->
+  <article class="scene scene--return" id="scene-return" aria-labelledby="s6-title">
+    <div class="stage">
+      <img class="stage__bg" src="assets/return-sm.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="frame">
+        <div class="pan"><div class="art">
+          <img class="shot" src="assets/return-lg.webp" srcset="assets/return-sm.webp 960w, assets/return-lg.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async"
+            alt="Ram, Sita and Lakshman returning to Ayodhya in a chariot at golden dusk, welcomed by crowds holding diyas, with a glowing palace and fireworks behind them">
+          <svg class="fx" viewBox="0 0 1920 1080" preserveAspectRatio="none" aria-hidden="true">
+            <defs><mask id="duskMask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080"><rect width="1920" height="1080" fill="#fff"/><g class="holes"></g></mask></defs>
+            <rect class="duskrect" width="1920" height="1080" fill="#070C24" fill-opacity=".72" mask="url(#duskMask)"/>
+            <g class="glints"></g>
+          </svg>
+        </div></div>
+        <div class="overlay wash" id="return-wash" aria-hidden="true"></div>
+        <canvas id="fw-return" class="fxcanvas" aria-hidden="true"></canvas>
+        <div class="overlay flash" id="return-entry" aria-hidden="true"></div>
+      </div>
+      <div class="tcard tcard--br">
+        <p class="eyebrow">Return to Ayodhya</p>
+        <h3 id="s6-title">Ram Returns to Ayodhya</h3>
+        <p>When Ram returned to Ayodhya, the people welcomed him by lighting rows of diyas. This is remembered as the celebration of Diwali.</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ============ <FestivalOfLightsSection /> ============ -->
+<section id="festival" class="festival" aria-labelledby="festival-title">
+  <div class="festival__bg"><img src="assets/lights-lg.webp" srcset="assets/lights-sm.webp 960w, assets/lights-lg.webp 1920w" sizes="100vw" width="1920" height="1080" loading="lazy" decoding="async"
+    alt="A river at night lined with thousands of glowing diyas on temple steps and floating on the water, under a full moon and a starry sky"></div>
+  <div class="festival__shade" aria-hidden="true"></div>
+  <div class="stars stars--drift" aria-hidden="true"></div>
+  <canvas id="em-festival" class="fxcanvas" aria-hidden="true"></canvas>
+  <div class="festival__lit" aria-hidden="true"></div>
+  <div id="diya-field" aria-hidden="true"></div>
+  <div class="festival__copy">
+    <h2 id="festival-title">The Festival of Lights</h2>
+    <p class="festival__msg">Diwali reminds us that even a small light can brighten the darkness.</p>
+    <button class="btn" id="btn-light" type="button">Light a Diya</button>
+    <p class="diya-count" id="diya-count" aria-live="polite">Each click lights one more diya</p>
+  </div>
+</section>
+
+<!-- ============ <CelebrationGuide /> ============ -->
+<section id="celebrate" class="celebrate" aria-labelledby="celebrate-title">
+  <div class="celebrate__wrap">
+    <h2 id="celebrate-title">How to Celebrate Diwali</h2>
+    <svg class="orn" viewBox="0 0 260 22" aria-hidden="true" focusable="false"><rect x="0" y="10.2" width="104" height="1.6" fill="url(#gOrnL)"/><rect x="156" y="10.2" width="104" height="1.6" fill="url(#gOrnR)"/><path d="M130 1 141 11 130 21 119 11Z" fill="#FFD166"/><path d="M130 6 136 11 130 16 124 11Z" fill="#B42318"/><circle cx="110" cy="11" r="3" fill="#FFD166"/><circle cx="150" cy="11" r="3" fill="#FFD166"/></svg>
+    <div class="cards">
+      <!-- <DiyasCard /> -->
+      <article class="card card--diya" id="card-diya">
+        <div class="card__stage">
+          <img src="assets/diyas-lg.webp" srcset="assets/diyas-sm.webp 640w, assets/diyas-lg.webp 1000w" sizes="(max-width:820px) 90vw, 30vw" width="1000" height="1250" loading="lazy" decoding="async"
+            alt="Three clay diyas with bright golden flames, surrounded by orange marigold flowers and petals">
+          <span class="flameglow" style="left:18%;top:47%"></span><span class="flameglow" style="left:46.4%;top:53%"></span><span class="flameglow" style="left:36%;top:60.6%"></span>
+          <button class="hit" type="button" id="diya-hit" aria-pressed="false" aria-label="Light the diyas. Hover or tap to make the flames grow"></button>
+        </div>
+        <div class="card__body">
+          <h3>Light Diyas</h3>
+          <p>Light diyas to welcome positivity, hope, and prosperity.</p>
+          <p class="cardhint">Hover or tap the flames</p>
+        </div>
+      </article>
+
+      <!-- <RangoliCard /> -->
+      <article class="card card--rangoli" id="card-rangoli">
+        <div class="card__stage">
+          <img src="assets/rangoli-lg.webp" srcset="assets/rangoli-sm.webp 640w, assets/rangoli-lg.webp 1000w" sizes="(max-width:820px) 90vw, 30vw" width="1000" height="1250" loading="lazy" decoding="async"
+            alt="A colourful rangoli of orange, teal, pink and purple petals around a lit diya, with bowls of coloured powder and flowers">
+          <div class="petals" id="rg-petals" data-n="9" aria-hidden="true"></div>
+          <canvas id="rg-canvas" width="640" height="800" role="img" aria-label="Rangoli drawing area. Tap or drag to add mirrored petals or dots."></canvas>
+        </div>
+        <div class="card__body">
+          <h3>Create Rangoli</h3>
+          <p>Decorate your home with rangoli to welcome guests and celebrate creativity.</p>
+          <div class="card__row"><button class="btn btn--ghost btn--sm" type="button" id="rg-toggle" aria-pressed="false">Design your own</button></div>
+          <div class="rg-tools" id="rg-tools">
+            <div class="swatches" role="group" aria-label="Choose a colour">
+              <button class="swatch" type="button" style="--c:#FF8C1A" data-c="#FF8C1A" aria-label="Saffron" aria-pressed="true"></button>
+              <button class="swatch" type="button" style="--c:#FFD166" data-c="#FFD166" aria-label="Gold" aria-pressed="false"></button>
+              <button class="swatch" type="button" style="--c:#FF5E14" data-c="#FF5E14" aria-label="Diya orange" aria-pressed="false"></button>
+              <button class="swatch" type="button" style="--c:#B42318" data-c="#B42318" aria-label="Crimson" aria-pressed="false"></button>
+              <button class="swatch" type="button" style="--c:#FFF4D6" data-c="#FFF4D6" aria-label="Cream" aria-pressed="false"></button>
+              <button class="swatch" type="button" style="--c:#356859" data-c="#356859" aria-label="Leaf green" aria-pressed="false"></button>
+            </div>
+            <div class="card__row">
+              <button class="btn btn--ghost btn--sm" type="button" id="rg-petal" aria-pressed="true">Petals</button>
+              <button class="btn btn--ghost btn--sm" type="button" id="rg-dot" aria-pressed="false">Dots</button>
+              <button class="btn btn--ghost btn--sm" type="button" id="rg-ring">Add a ring</button>
+              <button class="btn btn--ghost btn--sm" type="button" id="rg-reset">Reset</button>
+            </div>
+            <p class="cardhint">Tap or drag on the pattern</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- <SweetsCard /> -->
+      <article class="card card--sweets" id="card-sweets">
+        <div class="card__stage">
+          <img src="assets/sweets-lg.webp" srcset="assets/sweets-sm.webp 640w, assets/sweets-lg.webp 1000w" sizes="(max-width:820px) 90vw, 30vw" width="1000" height="1250" loading="lazy" decoding="async"
+            alt="A brass plate of golden laddus, silver-leaf kaju katli and orange jalebi, with glowing lamps and a lit palace behind">
+        </div>
+        <div class="card__body">
+          <h3>Share Sweets</h3>
+          <p>Share sweets, kindness, and happiness with family, friends, and neighbors.</p>
+          <div class="card__row"><button class="btn btn--ghost btn--sm" type="button" id="btn-share">Share Happiness</button></div>
+          <p class="wish" id="wish" aria-live="polite"></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ <ThankYouSection /> ============ -->
+<section id="thanks" class="thanks" aria-labelledby="thanks-title">
+  <div class="stars stars--drift" aria-hidden="true"></div>
+  <div class="thanks__side side side--l" aria-hidden="true">
+    <div class="swag"><div data-bunting></div><div class="lantern" data-lantern="a"></div></div>
+    <div class="friend">
+      <div class="cbubble"><b lang="en">Happy Diwali!</b><span lang="hi">दीपावली मंगलमय हो</span></div>
+      <div class="mascotbox" data-mascot="a"></div>
+    </div>
+  </div>
+  <div class="thanks__side side side--r" aria-hidden="true">
+    <div class="swag swag--r"><div data-bunting></div><div class="lantern" data-lantern="b"></div></div>
+    <div class="friend">
+      <div class="cbubble cbubble--r"><b lang="en">See you soon!</b><span lang="hi">फिर मिलेंगे</span></div>
+      <div class="mascotbox" data-mascot="b"></div>
+    </div>
+  </div>
+  <div class="thanks__art"><img src="assets/thanks-lg.webp" srcset="assets/thanks-sm.webp 640w, assets/thanks-lg.webp 1080w" sizes="(max-width:820px) 100vw, 40vw" width="1080" height="1920" loading="lazy" decoding="async"
+    alt="A single glowing diya resting on a faint golden rangoli outline beside a calm river at night, under a starry sky with marigold garlands hanging at the corners"></div>
+  <canvas id="fw-thanks" class="fxcanvas" aria-hidden="true"></canvas>
+  <canvas id="em-thanks" class="fxcanvas" aria-hidden="true"></canvas>
+  <div class="marigolds" data-n="18" aria-hidden="true"></div>
+  <div class="thanks__copy">
+    <h2 class="thanks__t1" id="thanks-title">Thank you for exploring the story of Diwali.</h2>
+    <p class="thanks__t2">May your life always be filled with light, peace, and happiness.</p>
+    <div class="greet" aria-hidden="true">
+      <span class="greet__i" style="--i:0" lang="hi"><b>शुभ दीपावली</b><i>Hindi</i></span>
+      <span class="greet__i" style="--i:1" lang="ta"><b>தீபாவளி நல்வாழ்த்துகள்</b><i>Tamil</i></span>
+      <span class="greet__i" style="--i:2" lang="te"><b>దీపావళి శుభాకాంక్షలు</b><i>Telugu</i></span>
+      <span class="greet__i" style="--i:3" lang="kn"><b>ದೀಪಾವಳಿ ಹಬ್ಬದ ಶುಭಾಶಯಗಳು</b><i>Kannada</i></span>
+      <span class="greet__i" style="--i:4" lang="ml"><b>ദീപാവലി ആശംസകൾ</b><i>Malayalam</i></span>
+      <span class="greet__i" style="--i:5" lang="bn"><b>শুভ দীপাবলি</b><i>Bengali</i></span>
+      <span class="greet__i" style="--i:6" lang="gu"><b>દિવાળીની શુભકામનાઓ</b><i>Gujarati</i></span>
+      <span class="greet__i" style="--i:7" lang="mr"><b>दिवाळीच्या हार्दिक शुभेच्छा</b><i>Marathi</i></span>
+      <span class="greet__i" style="--i:8" lang="pa"><b>ਦੀਵਾਲੀ ਦੀਆਂ ਵਧਾਈਆਂ</b><i>Punjabi</i></span>
+      <span class="greet__i" style="--i:9" lang="en"><b>Happy Diwali</b><i>English</i></span>
+    </div>
+    <div class="thanks__spacer"></div>
+    <p class="thanks__credit">Created with love by <span id="creator">RAMESH KUMAR</span></p>
+    <button class="btn btn--ghost" id="btn-replay" type="button">Replay the Story</button>
+  </div>
+</section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function () {
+'use strict';
+/* Generated Diwali ambience: a tanpura drone, a bansuri-style melody in Raag Bhoopali, and soft temple bells.
+   It runs on any AudioContext, live or offline, so it can be checked without speakers. */
+function createAudioEngine(ctx, out) {
+  var SA = 146.83;                       // D3, the tonic
+  var BEAT = 60 / 46;                    // slow, meditative pulse
+  var R = { Dl: 5 / 6, S: 1, R: 9 / 8, G: 5 / 4, P: 3 / 2, D: 5 / 3, S2: 2, R2: 9 / 4, G2: 5 / 2 };
+
+  function impulse(sec, decay) {
+    var len = Math.floor(ctx.sampleRate * sec), b = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (var ch = 0; ch < 2; ch++) {
+      var d = b.getChannelData(ch);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, decay);
+    }
+    return b;
+  }
+  function noise(sec) {
+    var len = Math.floor(ctx.sampleRate * sec), b = ctx.createBuffer(1, len, ctx.sampleRate), d = b.getChannelData(0);
+    for (var i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    return b;
+  }
+
+  var rev = ctx.createConvolver(); rev.buffer = impulse(3.4, 2.4);
+  var wet = ctx.createGain(); wet.gain.value = 0.55; rev.connect(wet); wet.connect(out);
+  var dry = ctx.createGain(); dry.gain.value = 0.8; dry.connect(out);
+  var bus = ctx.createGain(); bus.gain.value = 1; bus.connect(dry); bus.connect(rev);
+  var noiseBuf = noise(2);
+
+  /* tanpura string: two slightly detuned saws through a lowpass that closes as the note decays */
+  function string(f, t, g) {
+    var dur = 6;
+    var o1 = ctx.createOscillator(), o2 = ctx.createOscillator();
+    o1.type = 'sawtooth'; o2.type = 'sawtooth';
+    o1.frequency.value = f; o2.frequency.value = f * 1.0018;
+    var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.Q.value = 1.4;
+    lp.frequency.setValueAtTime(f * 12, t);
+    lp.frequency.exponentialRampToValueAtTime(f * 2.4, t + dur * 0.7);
+    var env = ctx.createGain();
+    env.gain.setValueAtTime(0.0001, t);
+    env.gain.exponentialRampToValueAtTime(g, t + 0.015);
+    env.gain.exponentialRampToValueAtTime(g * 0.5, t + 1.0);
+    env.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+    o1.connect(lp); o2.connect(lp); lp.connect(env); env.connect(bus);
+    o1.start(t); o2.start(t); o1.stop(t + dur + 0.1); o2.stop(t + dur + 0.1);
+  }
+
+  /* bansuri-style flute note: sine and triangle with delayed vibrato and a little breath */
+  function flute(f, t, d, v, from) {
+    var o = ctx.createOscillator(), o2 = ctx.createOscillator();
+    o.type = 'sine'; o2.type = 'triangle';
+    var f0 = from || f;
+    o.frequency.setValueAtTime(f0, t); o2.frequency.setValueAtTime(f0, t);
+    if (from) { o.frequency.exponentialRampToValueAtTime(f, t + 0.1); o2.frequency.exponentialRampToValueAtTime(f, t + 0.1); }
+    o2.detune.value = 4;
+    var lfo = ctx.createOscillator(); lfo.frequency.value = 5.2;
+    var lg = ctx.createGain(); lg.gain.setValueAtTime(0, t); lg.gain.linearRampToValueAtTime(f * 0.0065, t + Math.min(0.6, d));
+    lfo.connect(lg); lg.connect(o.frequency); lg.connect(o2.frequency);
+    var g2 = ctx.createGain(); g2.gain.value = 0.32;
+    var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2800; lp.Q.value = 0.7;
+    var env = ctx.createGain();
+    env.gain.setValueAtTime(0.0001, t);
+    env.gain.linearRampToValueAtTime(v, t + 0.13);
+    env.gain.setValueAtTime(v * 0.92, Math.max(t + 0.14, t + d - 0.05));
+    env.gain.exponentialRampToValueAtTime(0.0001, t + d + 0.45);
+    var n = ctx.createBufferSource(); n.buffer = noiseBuf; n.loop = true;
+    var bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = f * 2; bp.Q.value = 2.5;
+    var ng = ctx.createGain();
+    ng.gain.setValueAtTime(0, t); ng.gain.linearRampToValueAtTime(0.06 * v, t + 0.05);
+    ng.gain.exponentialRampToValueAtTime(0.006 * v, t + 0.4); ng.gain.linearRampToValueAtTime(0.0001, t + d + 0.45);
+    o.connect(env); o2.connect(g2); g2.connect(env); env.connect(lp); lp.connect(bus);
+    n.connect(bp); bp.connect(ng); ng.connect(bus);
+    var end = t + d + 0.6;
+    o.start(t); o2.start(t); lfo.start(t); n.start(t);
+    o.stop(end); o2.stop(end); lfo.stop(end); n.stop(end);
+  }
+
+  /* temple bell: inharmonic partials that ring out */
+  function bell(f, t, g) {
+    var parts = [[1, 1, 5], [2.76, 0.5, 3.2], [5.4, 0.26, 2], [8.93, 0.12, 1.2]];
+    parts.forEach(function (p) {
+      var o = ctx.createOscillator(); o.type = 'sine'; o.frequency.value = f * p[0];
+      var e = ctx.createGain();
+      e.gain.setValueAtTime(0.0001, t);
+      e.gain.exponentialRampToValueAtTime(g * p[1], t + 0.006);
+      e.gain.exponentialRampToValueAtTime(0.0001, t + p[2]);
+      o.connect(e); e.connect(bus);
+      o.start(t); o.stop(t + p[2] + 0.1);
+    });
+  }
+
+  var PHRASES = [
+    [['S', 1.5], ['R', 1], ['G', 2], ['P', 1.5], ['G', 1], ['R', 1], ['S', 3]],
+    [['G', 1], ['P', 1], ['D', 2], ['P', 1], ['G', 1.5], ['R', 1], ['G', 1], ['S', 3]],
+    [['P', 1.5], ['D', 1.5], ['S2', 2.5], ['D', 1], ['P', 1.5], ['G', 2], ['R', 1], ['S', 3]],
+    [['S2', 2], ['D', 1], ['P', 1.5], ['G', 1], ['P', 1], ['D', 1.5], ['P', 1], ['G', 1], ['R', 1], ['S', 3.5]],
+    [['Dl', 1.5], ['S', 1], ['R', 1], ['G', 2.5], ['R', 1], ['S', 1], ['Dl', 2], ['S', 3]],
+    [['G', 1.5], ['G2', 2], ['R2', 1], ['S2', 1.5], ['D', 1], ['P', 1.5], ['G', 1], ['R', 1], ['S', 3.5]]
+  ];
+  var STRINGS = [SA * 0.75, SA, SA, SA * 0.5], GAPS = [1.15, 1.15, 1.15, 1.55];
+
+  var tTan, tMel, tBell, si = 0, lastPhrase = -1;
+  function reset(t) { tTan = t; tMel = t + 4; tBell = t + 9; si = 0; }
+  reset(ctx.currentTime + 0.05);
+
+  function scheduleUntil(t) {
+    while (tTan < t) { string(STRINGS[si % 4], tTan, 0.085); tTan += GAPS[si % 4]; si++; }
+    while (tMel < t) {
+      var k; do { k = Math.floor(Math.random() * PHRASES.length); } while (k === lastPhrase);
+      lastPhrase = k;
+      var ph = PHRASES[k], at = tMel, prev = null;
+      for (var i = 0; i < ph.length; i++) {
+        var f = SA * 2 * R[ph[i][0]], d = ph[i][1] * BEAT;
+        var glide = prev && Math.abs(Math.log(f / prev)) < 0.25 && Math.random() < 0.6 ? prev : null;
+        flute(f, at, d, 0.17 + Math.random() * 0.05, glide);
+        prev = f; at += d;
+      }
+      tMel = at + (2.5 + Math.random() * 3.5) * BEAT;
+    }
+    while (tBell < t) {
+      var pitch = [4, 6, 5, 4.5][Math.floor(Math.random() * 4)];
+      bell(SA * pitch, tBell, 0.045);
+      tBell += 7 + Math.random() * 6;
+    }
+  }
+  return { scheduleUntil: scheduleUntil, reset: reset };
+}
+
+/* ================= settings you may want to change ================= */
+const CREATOR_NAME = 'RAMESH KUMAR';   // your name for the closing credit. Leave empty to show "[Your Name]".
+const MUSIC_URL = 'Ramayana - Mangal Rang (Audio) - Parth - A.R. Rahman - Kumar Vishwas - Recreated By Parth.mp3.mpeg';      // optional: path to your own .mp3. Leave empty to use the built-in generated music.
+
+/* ================= helpers ================= */
+const root = document.documentElement;
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.prototype.slice.call((r || document).querySelectorAll(s));
+const rand = (a, b) => a + Math.random() * (b - a);
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const lerp = (a, b, t) => a + (b - a) * t;
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+const pick = (arr) => arr[Math.floor(Math.random() * arr.length)];
+function safe(fn) { try { fn(); } catch (e) { if (window.console) console.error(e); } }
+
+const hasGSAP = !!(window.gsap && window.ScrollTrigger);
+const mqReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+const mqPortrait = window.matchMedia('(max-width: 820px), (max-aspect-ratio: 5/4)');
+let reduced = mqReduce.matches || !hasGSAP;
+const lowPower = () => mqPortrait.matches || (navigator.hardwareConcurrency || 8) <= 4;
+
+/* ================= small svg diya (used on the meaning, festival and lamp rows) ================= */
+function diyaSVG(g) {
+  return '<svg class="diya" viewBox="0 0 120 120" aria-hidden="true" focusable="false" style="--g:' + (g == null ? 1 : g) + '">' +
+    '<circle class="diya__glow" cx="60" cy="50" r="58" fill="url(#gGlowGold)"/>' +
+    '<path class="diya__flame" d="M60 6C68 22 83 36 75 54C71 62 49 62 45 54C37 36 52 22 60 6Z" fill="url(#gFlame)"/>' +
+    '<path d="M60 38C64 46 68 50 65 56C63 59 57 59 55 56C52 50 57 46 60 38Z" fill="#FFF8E6" opacity=".9"/>' +
+    '<path d="M57.5 58h5v6h-5z" fill="#2a1208"/>' +
+    '<path d="M14 66Q60 54 106 66Q100 100 60 106Q20 100 14 66Z" fill="url(#gClay)"/>' +
+    '<ellipse cx="60" cy="65" rx="45" ry="8" fill="#5a1f0b"/>' +
+    '<path d="M22 77Q60 89 98 77" fill="none" stroke="#FFD166" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6.5"/>' +
+    '</svg>';
+}
+
+/* ================= canvas effects: rising embers and fireworks ================= */
+const PAL = ['#FFD166', '#FF9A2E', '#FF5C93', '#B58CFF', '#4FD6C8', '#FFF4D6'];
+const SPR = {};
+function sprite(hex) {
+  if (SPR[hex]) return SPR[hex];
+  const c = document.createElement('canvas'); c.width = c.height = 64;
+  const x = c.getContext('2d');
+  const rgb = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(',');
+  const g = x.createRadialGradient(32, 32, 0, 32, 32, 32);
+  g.addColorStop(0, 'rgba(255,255,255,1)');
+  g.addColorStop(0.16, 'rgba(' + rgb + ',0.95)');
+  g.addColorStop(0.5, 'rgba(' + rgb + ',0.3)');
+  g.addColorStop(1, 'rgba(' + rgb + ',0)');
+  x.fillStyle = g; x.fillRect(0, 0, 64, 64);
+  SPR[hex] = c; return c;
+}
+
+const FXS = [];
+let rafId = 0, lastT = 0;
+function kick() { if (!rafId) { lastT = performance.now(); rafId = requestAnimationFrame(frame); } }
+function frame(t) {
+  const dt = Math.min(0.05, (t - lastT) / 1000); lastT = t;
+  let any = false;
+  for (let i = 0; i < FXS.length; i++) {
+    const fx = FXS[i];
+    if (fx.live()) { fx.step(dt, t / 1000); any = true; fx.dirty = true; }
+    else if (fx.dirty) fx.clear();
+  }
+  rafId = any ? requestAnimationFrame(frame) : 0;
+}
+document.addEventListener('visibilitychange', kick);
+
+class FX {
+  constructor(canvas, o) {
+    this.c = canvas; this.g = canvas.getContext('2d');
+    this.o = Object.assign({ embers: 0, fireworks: false, color: '#FFD166', speed: 1, fwTop: 0.08, fwBottom: 0.4 }, o || {});
+    this.embers = []; this.sparks = []; this.rockets = [];
+    this.visible = false; this.auto = !!this.o.fireworks; this.timer = rand(0.4, 1);
+    this.dpr = Math.min(window.devicePixelRatio || 1, lowPower() ? 1 : 1.5);
+    this.w = 0; this.h = 0; this.dirty = false; this.filled = false;
+    this.resize();
+    if (window.ResizeObserver) new ResizeObserver(() => this.resize()).observe(canvas);
+    if (window.IntersectionObserver) {
+      new IntersectionObserver((es) => { this.visible = es[es.length - 1].isIntersecting; if (this.visible) kick(); }).observe(canvas);
+    } else { this.visible = true; }
+    FXS.push(this);
+  }
+  live() { return this.visible && !reduced && !document.hidden && this.w > 0; }
+  resize() {
+    const r = this.c.getBoundingClientRect();
+    this.w = r.width; this.h = r.height;
+    this.c.width = Math.max(1, Math.round(r.width * this.dpr));
+    this.c.height = Math.max(1, Math.round(r.height * this.dpr));
+    this.g.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+  }
+  clear() { this.g.clearRect(0, 0, this.w, this.h); this.dirty = false; }
+  want() { return Math.round((lowPower() ? 0.55 : 1) * this.o.embers * clamp(this.w / 1200, 0.5, 1.4)); }
+  spawnEmber(anywhere) {
+    this.embers.push({
+      x: rand(0, this.w), y: anywhere ? rand(0, this.h) : this.h + 12,
+      vx: rand(-8, 8), vy: -rand(14, 42) * this.o.speed, r: rand(5, 15), a: rand(0.4, 1),
+      ph: rand(0, 6.28), fq: rand(0.6, 1.6)
+    });
+  }
+  launch() {
+    if (this.rockets.length > 3) return;
+    const x = rand(this.w * 0.1, this.w * 0.9);
+    const ty = rand(this.h * this.o.fwTop, this.h * this.o.fwBottom);
+    this.rockets.push({ x: x, y: this.h, vx: rand(-14, 14), vy: -(this.h - ty) / rand(0.75, 1.05), ty: ty, col: pick(PAL), tr: [] });
+  }
+  volley(n) { for (let i = 0; i < n; i++) setTimeout(() => this.launch(), i * 380); }
+  burst(x, y, col, n, power) {
+    const c1 = col || pick(PAL), c2 = Math.random() < 0.5 ? pick(PAL) : c1;
+    const cnt = n || (lowPower() ? 34 : 56);
+    const k = clamp(this.w / 1200, 0.6, 1.4) * (power || 1);
+    for (let i = 0; i < cnt; i++) {
+      const a = (i / cnt) * Math.PI * 2 + rand(-0.06, 0.06), sp = rand(0.55, 1) * rand(120, 260) * k;
+      this.sparks.push({ x: x, y: y, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, life: 1, dec: rand(0.45, 0.85), size: rand(7, 12), col: i % 3 ? c1 : c2 });
+    }
+  }
+  puff(x, y) { this.burst(x, y, '#FFD166', 12, 0.35); }
+  step(dt, t) {
+    const g = this.g;
+    g.clearRect(0, 0, this.w, this.h);
+    g.globalCompositeOperation = 'lighter';
+    const want = this.want();
+    while (this.embers.length < want) { this.spawnEmber(!this.filled); }
+    this.filled = true;
+    const es = sprite(this.o.color);
+    for (let i = this.embers.length - 1; i >= 0; i--) {
+      const e = this.embers[i];
+      e.y += e.vy * dt; e.x += (e.vx + Math.sin(t * e.fq + e.ph) * 12) * dt;
+      if (e.y < -20 || i >= want) { this.embers.splice(i, 1); continue; }
+      g.globalAlpha = e.a * (0.55 + 0.45 * Math.sin(t * 2.2 + e.ph)) * clamp(e.y / 60, 0, 1);
+      g.drawImage(es, e.x - e.r, e.y - e.r, e.r * 2, e.r * 2);
+    }
+    if (this.o.fireworks) {
+      if (this.auto) { this.timer -= dt; if (this.timer <= 0) { this.launch(); this.timer = rand(0.9, 2.1); } }
+      for (let i = this.rockets.length - 1; i >= 0; i--) {
+        const r = this.rockets[i];
+        r.x += r.vx * dt; r.y += r.vy * dt; r.tr.push(r.x, r.y); if (r.tr.length > 14) r.tr.splice(0, 2);
+        const rs = sprite(r.col);
+        for (let k = 0; k < r.tr.length; k += 2) { g.globalAlpha = (k / r.tr.length) * 0.7; const s = 6 + k * 0.3; g.drawImage(rs, r.tr[k] - s / 2, r.tr[k + 1] - s / 2, s, s); }
+        if (r.y <= r.ty) { this.burst(r.x, r.y, r.col); this.rockets.splice(i, 1); }
+      }
+      for (let i = this.sparks.length - 1; i >= 0; i--) {
+        const s = this.sparks[i];
+        s.life -= s.dec * dt;
+        if (s.life <= 0) { this.sparks.splice(i, 1); continue; }
+        const drag = Math.pow(0.12, dt);
+        s.vx *= drag; s.vy = s.vy * drag + 70 * dt;
+        s.x += s.vx * dt; s.y += s.vy * dt;
+        const sz = s.size * (0.5 + 0.5 * s.life);
+        g.globalAlpha = Math.min(1, s.life * 1.4);
+        g.drawImage(sprite(s.col), s.x - sz, s.y - sz, sz * 2, sz * 2);
+      }
+    } else if (this.sparks.length) {
+      for (let i = this.sparks.length - 1; i >= 0; i--) {
+        const s = this.sparks[i];
+        s.life -= s.dec * dt * 1.6;
+        if (s.life <= 0) { this.sparks.splice(i, 1); continue; }
+        const drag = Math.pow(0.1, dt);
+        s.vx *= drag; s.vy = s.vy * drag + 30 * dt; s.x += s.vx * dt; s.y += s.vy * dt;
+        const sz = s.size * 0.6 * (0.5 + 0.5 * s.life);
+        g.globalAlpha = Math.min(1, s.life * 1.4);
+        g.drawImage(sprite(s.col), s.x - sz, s.y - sz, sz * 2, sz * 2);
+      }
+    }
+    g.globalAlpha = 1; g.globalCompositeOperation = 'source-over';
+  }
+}
+
+/* ================= static builders ================= */
+const LEAF_COLS = ['#FFB347', '#FF8C1A', '#E8A33D', '#C97B2E', '#7A9E3E'];
+const PETAL_COLS = ['#FF5C93', '#FF8C1A', '#FFD166', '#B58CFF', '#4FD6C8'];
+const MARIGOLD_COLS = ['#FF8C1A', '#FFB02E', '#FFD166', '#FF6A1A', '#FFC24D'];
+function fill(sel, make, scale) {
+  $$(sel).forEach((el) => {
+    const n = Math.round(+(el.dataset.n || 8) * (lowPower() ? 0.6 : 1) * (scale || 1));
+    el.textContent = '';
+    for (let i = 0; i < n; i++) el.appendChild(make(i, n));
+  });
+}
+function span(cls, style, html) {
+  const d = document.createElement('span'); d.className = cls; d.style.cssText = style; if (html) d.innerHTML = html; return d;
+}
+
+const HERO_LAMPS = [[11.6, 87.6], [23.6, 87.8], [33.8, 86.3], [28.8, 91.6], [66.4, 86.3], [71.6, 91.8], [77.1, 87.6], [88.4, 87.8], [49.7, 77.8]];
+const RETURN_HOLES = [[298, 730, 260], [1210, 942, 260], [1642, 830, 240], [797, 1037, 230], [182, 778, 230], [1286, 756, 220], [1536, 572, 260], [576, 842, 230]];
+const STEPS = [
+  ['scene-exile', 'Exile'], ['scene-abduct', 'Sita’s Abduction'], ['scene-jatayu', 'Jatayu’s Sacrifice'],
+  ['scene-hanuman', 'The Search for Sita'], ['scene-battle', 'The Battle'], ['scene-return', 'Return to Ayodhya']
+];
+const SVGNS = 'http://www.w3.org/2000/svg';
+function svgEl(tag, attrs, parent) {
+  const e = document.createElementNS(SVGNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+function petalPath(len, w) {
+  return 'M0 0C' + w + ' ' + (-len * 0.28) + ' ' + w * 0.85 + ' ' + (-len * 0.82) + ' 0 ' + (-len) + 'C' + (-w * 0.85) + ' ' + (-len * 0.82) + ' ' + (-w) + ' ' + (-len * 0.28) + ' 0 0Z';
+}
+function buildLoaderLines() {
+  const svg = $('#loader-lines'); if (!svg) return;
+  const cx = 720, cy = 1280;
+  [110, 235, 360].forEach((r) => svgEl('circle', { cx: cx, cy: cy, r: r, pathLength: 1 }, svg));
+  svgEl('circle', { cx: cx, cy: cy, r: 565, pathLength: 1, class: 'thin' }, svg);
+  for (let k = 0; k < 8; k++) svgEl('path', { d: petalPath(430, 150), pathLength: 1, transform: 'translate(' + cx + ' ' + cy + ') rotate(' + k * 45 + ')' }, svg);
+  for (let k = 0; k < 8; k++) svgEl('path', { d: petalPath(300, 95), pathLength: 1, class: 'thin', transform: 'translate(' + cx + ' ' + cy + ') rotate(' + (22.5 + k * 45) + ')' }, svg);
+  for (let k = 0; k < 16; k++) svgEl('path', { d: petalPath(120, 42), pathLength: 1, transform: 'translate(' + cx + ' ' + cy + ') rotate(' + k * 22.5 + ') translate(0 -455)' }, svg);
+  for (let k = 0; k < 12; k++) svgEl('path', { d: petalPath(72, 26), pathLength: 1, class: 'thin', transform: 'translate(' + cx + ' ' + cy + ') rotate(' + k * 30 + ')' }, svg);
+}
+
+function buildStatic() {
+  /* hero lamps */
+  const art = $('#hero-art');
+  if (art) HERO_LAMPS.forEach((p, i) => art.appendChild(span('softglow lamp-glow' + (i === 8 ? ' lamp-glow--big' : ''), 'left:' + p[0] + '%;top:' + p[1] + '%')));
+
+  /* meaning section: centre diya and the two columns of small lamps */
+  const md = $('#m-diya'); if (md) md.innerHTML = diyaSVG(1);
+  ['#m-lamps-l', '#m-lamps-r'].forEach((s) => { const el = $(s); if (el) el.innerHTML = [0, 1, 2, 3, 4].map(() => diyaSVG(1)).join(''); });
+
+  /* falling leaves, feathers, wind and petals */
+  fill('.leaves', (i) => span('leaf', '--x:' + rand(0, 100).toFixed(1) + '%;--d:' + rand(9, 18).toFixed(1) + 's;--delay:' + (-rand(0, 18)).toFixed(1) + 's;--s:' + rand(10, 22).toFixed(0) + 'px;--w:' + rand(20, 60).toFixed(0) + 'px;--c:' + LEAF_COLS[i % LEAF_COLS.length], '<i></i>'));
+  fill('.feathers', (i) => span('feather', '--x:' + rand(0, 100).toFixed(1) + '%;--d:' + rand(10, 19).toFixed(1) + 's;--delay:' + (-rand(0, 19)).toFixed(1) + 's;--s:' + rand(12, 24).toFixed(0) + 'px;--w:' + rand(20, 70).toFixed(0) + 'px', '<i></i>'));
+  fill('.wind', () => span('windline', '--y:' + rand(8, 70).toFixed(0) + '%;--d:' + rand(3.5, 7).toFixed(1) + 's;--delay:' + (-rand(0, 7)).toFixed(1) + 's'));
+  fill('.marigolds', (i) => span('petal', '--x:' + rand(0, 100).toFixed(1) + '%;--d:' + rand(9, 16).toFixed(1) + 's;--delay:' + (-rand(0, 16)).toFixed(1) + 's;--s:' + rand(11, 19).toFixed(0) + 'px;--w:' + rand(18, 54).toFixed(0) + 'px;--c:' + MARIGOLD_COLS[i % MARIGOLD_COLS.length], '<i></i>'));
+  fill('.petals', (i) => span('petal', '--x:' + rand(0, 100).toFixed(1) + '%;--d:' + rand(8, 15).toFixed(1) + 's;--delay:' + (-rand(0, 15)).toFixed(1) + 's;--s:' + rand(9, 16).toFixed(0) + 'px;--w:' + rand(16, 46).toFixed(0) + 'px;--c:' + PETAL_COLS[i % PETAL_COLS.length], '<i></i>'));
+
+  /* hanuman scene: shimmer on the sea */
+  const sea = $('#scene-hanuman .sea');
+  if (sea) for (let i = 0; i < 10; i++) {
+    svgEl('ellipse', { class: 'shimmer', cx: rand(1060, 1840), cy: rand(560, 650), rx: rand(40, 110), ry: rand(2.5, 5), fill: '#FFF1C2', style: 'opacity:.1;animation-delay:' + (-rand(0, 4)).toFixed(2) + 's;animation-duration:' + rand(3, 5.5).toFixed(1) + 's' }, sea);
+  }
+  /* battle scene: golden motes released when the burst of light fills the sky */
+  const bs = $('#scene-battle .bsparks');
+  if (bs) for (let i = 0; i < 26; i++) svgEl('circle', { class: 'mote', cx: 1690 + rand(-190, 190), cy: 360 + rand(-190, 170), r: rand(3, 8), fill: '#FFE29A', opacity: 0 }, bs);
+  /* hanuman scene: the comet's tail */
+  const gt = $('#scene-hanuman .gtrail');
+  if (gt) for (let i = 0; i < 7; i++) svgEl('circle', { class: 'gdot', cx: 527, cy: 513, r: 22 - i * 2.4, fill: 'url(#gGlowWhite)', opacity: Math.max(0.14, 0.85 - i * 0.12).toFixed(2) }, gt);
+  /* return scene: lights that open one by one */
+  const holes = $('#scene-return .holes'), glints = $('#scene-return .glints');
+  if (holes && glints) {
+    RETURN_HOLES.forEach((h) => {
+      svgEl('circle', { class: 'hole', cx: h[0], cy: h[1], r: 0, fill: 'url(#gHole)' }, holes);
+      svgEl('circle', { class: 'glint', cx: h[0], cy: h[1], r: 170, fill: 'url(#gGlowGold)', opacity: 0 }, glints);
+    });
+    svgEl('circle', { class: 'hole hole--big', cx: 1152, cy: 640, r: 0, fill: 'url(#gHole)' }, holes);
+  }
+
+  /* story progress list */
+  const list = $('#progress-list');
+  if (list) list.innerHTML = STEPS.map((s, i) => '<li><a href="#' + s[0] + '" data-i="' + i + '" aria-label="' + s[1] + '"><span class="dot">' + (i + 1) + '</span><span class="lbl">' + s[1] + '</span></a></li>').join('');
+
+  buildLoaderLines();
+  const cr = $('#creator'); if (cr && CREATOR_NAME) cr.textContent = CREATOR_NAME;
+}
+
+/* ================= cartoon decorations: diya mascots, bunting and lanterns (drawn in code, no image files) ================= */
+const OL = '#2B1025';   /* cartoon outline colour */
+
+const MASCOTS = {
+  /* terracotta diya waving hello */
+  a: { top: '#FFB972', mid: '#F2702E', bot: '#B3411A', rim: '#FFCB8A', oil: '#4A1A0C', cheek: '#FF7A9A', foot: '#7A2E12', pose: 'wave' },
+  /* violet diya holding a sparkler */
+  b: { top: '#D2B3FF', mid: '#8F52DE', bot: '#4B2490', rim: '#E2CCFF', oil: '#2A1260', cheek: '#FF8FB1', foot: '#3A1B78', pose: 'spark' }
+};
+
+function star4(x, y, r, cls, delay) {
+  const k = r * 0.28;
+  return '<path class="' + (cls || 'tw') + '" style="animation-delay:' + (delay || 0) + 's" d="M' + x + ' ' + (y - r) + 'L' + (x + k) + ' ' + (y - k) + 'L' + (x + r) + ' ' + y + 'L' + (x + k) + ' ' + (y + k) + 'L' + x + ' ' + (y + r) + 'L' + (x - k) + ' ' + (y + k) + 'L' + (x - r) + ' ' + y + 'L' + (x - k) + ' ' + (y - k) + 'Z" fill="#FFF1C2"/>';
+}
+
+/* one diya friend. kind: 'a' or 'b'. The picture is drawn facing the middle of the page when mirrored by CSS. */
+function mascotSVG(kind, uid) {
+  const m = MASCOTS[kind] || MASCOTS.a;
+  const gid = 'mg' + kind + (uid || '');
+  const arm = (d, w) => '<path d="' + d + '" fill="none" stroke="' + OL + '" stroke-width="' + (w + 11) + '" stroke-linecap="round"/><path d="' + d + '" fill="none" stroke="' + m.mid + '" stroke-width="' + w + '" stroke-linecap="round"/>';
+  let raised = '';
+  if (m.pose === 'wave') {
+    raised = '<g class="m-wave">' + arm('M262 270Q302 258 296 202', 15) +
+      '<circle cx="296" cy="190" r="19" fill="' + m.mid + '" stroke="' + OL + '" stroke-width="5"/>' +
+      '<path d="M287 175l-3-9M296 171v-10M305 175l3-9" stroke="' + OL + '" stroke-width="4" stroke-linecap="round"/></g>';
+  } else {
+    raised = '<g class="m-wave m-wave--slow">' + arm('M262 270Q302 258 296 204', 15) +
+      '<path d="M300 196L330 122" stroke="#C9CFDD" stroke-width="5" stroke-linecap="round"/>' +
+      '<circle cx="296" cy="192" r="19" fill="' + m.mid + '" stroke="' + OL + '" stroke-width="5"/>' +
+      '<g transform="translate(332 116)"><g class="m-spark"><circle r="30" fill="url(#gGlowWhite)"/>' +
+      '<g stroke="#FFF1C2" stroke-width="3.4" stroke-linecap="round"><path d="M0-22V-8M0 8V22M-22 0H-8M8 0H22M-15-15l8 8M7 7l8 8M15-15l-8 8M-7 7l-8 8"/></g>' +
+      '<circle r="5" fill="#fff"/></g></g></g>';
+  }
+  return '<svg class="mascot mascot--' + kind + '" viewBox="0 0 340 430" aria-hidden="true" focusable="false">' +
+    '<defs>' +
+    '<linearGradient id="' + gid + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + m.top + '"/><stop offset=".55" stop-color="' + m.mid + '"/><stop offset="1" stop-color="' + m.bot + '"/></linearGradient>' +
+    '<radialGradient id="' + gid + 'f" cx=".5" cy=".78" r=".7"><stop offset="0" stop-color="#FFF8DC"/><stop offset=".45" stop-color="#FFD166"/><stop offset="1" stop-color="#FF8C1A"/></radialGradient>' +
+    '</defs>' +
+    /* floor: a little flat rangoli under the feet */
+    '<g transform="translate(170 410) scale(1 .2)">' +
+    '<circle r="158" fill="rgba(5,8,26,.45)"/>' +
+    [0, 45, 90, 135, 180, 225, 270, 315].map((a, i) => '<ellipse cx="0" cy="-104" rx="26" ry="46" transform="rotate(' + a + ')" fill="' + (i % 2 ? '#FF5C93' : '#4FD6C8') + '" opacity=".9"/>').join('') +
+    '<circle r="150" fill="none" stroke="#FFD166" stroke-width="7" stroke-dasharray="2 16" stroke-linecap="round"/>' +
+    '<circle r="58" fill="#FFD166" opacity=".85"/></g>' +
+    '<g class="m-body">' +
+    '<g transform="translate(20 0)">' +
+    '<ellipse cx="104" cy="392" rx="28" ry="13" fill="' + m.foot + '" stroke="' + OL + '" stroke-width="5"/><ellipse cx="196" cy="392" rx="28" ry="13" fill="' + m.foot + '" stroke="' + OL + '" stroke-width="5"/>' +
+    arm('M40 270Q10 296 20 338', 15) + '<circle cx="20" cy="342" r="17" fill="' + m.mid + '" stroke="' + OL + '" stroke-width="5"/>' +
+    raised +
+    '<path d="M32 238C26 322 84 386 150 388C216 386 274 322 268 238Z" fill="url(#' + gid + ')" stroke="' + OL + '" stroke-width="6" stroke-linejoin="round"/>' +
+    '<path d="M50 300C54 330 74 356 104 372" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="7" stroke-linecap="round"/>' +
+    '<path d="M40 234C22 236 8 228 2 212C20 214 36 216 56 224Z" fill="' + m.rim + '" stroke="' + OL + '" stroke-width="6" stroke-linejoin="round"/>' +
+    '<ellipse cx="150" cy="238" rx="118" ry="26" fill="' + m.rim + '" stroke="' + OL + '" stroke-width="6"/>' +
+    '<ellipse cx="150" cy="240" rx="96" ry="17" fill="' + m.oil + '"/><ellipse cx="150" cy="243" rx="66" ry="8" fill="#FFB347" opacity=".42"/>' +
+    '<circle class="m-glow" cx="150" cy="150" r="104" fill="url(#gGlowGold)" opacity=".7"/>' +
+    '<g class="m-flame">' +
+    '<path d="M150 38C170 86 208 118 200 174C194 222 106 222 100 174C92 118 130 86 150 38Z" fill="url(#' + gid + 'f)" stroke="#E8500F" stroke-width="5" stroke-linejoin="round"/>' +
+    '<path d="M150 108C161 134 176 148 170 176C166 196 134 196 130 176C124 148 139 134 150 108Z" fill="#FFF6D8"/></g>' +
+    /* face */
+    '<g class="m-eyes"><ellipse cx="108" cy="298" rx="12" ry="16" fill="' + OL + '"/><ellipse cx="192" cy="298" rx="12" ry="16" fill="' + OL + '"/>' +
+    '<circle cx="104.5" cy="291" r="4.6" fill="#fff"/><circle cx="188.5" cy="291" r="4.6" fill="#fff"/><circle cx="112" cy="304" r="2.2" fill="#fff"/><circle cx="196" cy="304" r="2.2" fill="#fff"/></g>' +
+    '<ellipse cx="80" cy="322" rx="14" ry="8" fill="' + m.cheek + '" opacity=".8"/><ellipse cx="220" cy="322" rx="14" ry="8" fill="' + m.cheek + '" opacity=".8"/>' +
+    '<path d="M128 318Q150 348 172 318Q150 324 128 318Z" fill="#8A1F2B" stroke="' + OL + '" stroke-width="4" stroke-linejoin="round"/>' +
+    '<path d="M139 331Q150 342 161 331Q150 326 139 331Z" fill="#FF7A9A"/>' +
+    '<path d="M72 356Q150 398 228 356" fill="none" stroke="#FFD166" stroke-width="5" stroke-linecap="round" stroke-dasharray="1 13"/>' +
+    '</g></g>' +
+    star4(36, 120, 13, 'tw', 0) + star4(318, 60, 10, 'tw', 0.9) + star4(52, 36, 8, 'tw', 1.6) +
+    '</svg>';
+}
+
+/* a string of little flags (no lantern; those hang separately) */
+function buntingSVG() {
+  const cols = ['#FF8C1A', '#FFD166', '#E0383A', '#2FB8A8', '#B58CFF'];
+  const P0 = [-10, 6], P1 = [210, 64], P2 = [430, 8];
+  const at = (t) => [(1 - t) * (1 - t) * P0[0] + 2 * (1 - t) * t * P1[0] + t * t * P2[0], (1 - t) * (1 - t) * P0[1] + 2 * (1 - t) * t * P1[1] + t * t * P2[1]];
+  const d = 'M' + P0[0] + ' ' + P0[1] + 'Q' + P1[0] + ' ' + P1[1] + ' ' + P2[0] + ' ' + P2[1];
+  let flags = '';
+  for (let i = 0; i < 11; i++) {
+    const t = 0.05 + i * 0.09, p = at(t), q = at(t + 0.02), ang = Math.atan2(q[1] - p[1], q[0] - p[0]) * 180 / Math.PI;
+    flags += '<g transform="translate(' + p[0].toFixed(1) + ' ' + p[1].toFixed(1) + ') rotate(' + ang.toFixed(1) + ')"><g class="m-flag" style="animation-delay:' + (-i * 0.35).toFixed(2) + 's">' +
+      '<path d="M-14 0H14L0 40Z" fill="' + cols[i % cols.length] + '" stroke="' + OL + '" stroke-width="3" stroke-linejoin="round"/><circle cy="12" r="3.4" fill="#FFF4D6" opacity=".85"/></g></g>';
+  }
+  return '<svg class="bunting" viewBox="0 0 420 92" preserveAspectRatio="xMidYMin meet" aria-hidden="true" focusable="false">' +
+    '<path d="' + d + '" fill="none" stroke="' + OL + '" stroke-width="5" stroke-linecap="round"/><path d="' + d + '" fill="none" stroke="#FFD166" stroke-width="2.4" stroke-linecap="round"/>' + flags + '</svg>';
+}
+
+/* a hanging star lantern (akash kandil). kind 'a': red and saffron, long string. kind 'b': violet and gold, short string */
+function lanternSVG(kind) {
+  const L = kind === 'b' ? { len: 34, c1: '#7B3FD0', c2: '#C9A6FF' } : { len: 76, c1: '#E0383A', c2: '#FF8C1A' };
+  const pts = [];
+  for (let i = 0; i < 16; i++) { const r = i % 2 ? 24 : 46, a = (i * Math.PI) / 8 - Math.PI / 2; pts.push([(r * Math.cos(a)), (r * Math.sin(a))]); }
+  const fmt = (k) => pts.map((c) => (c[0] * k).toFixed(1) + ',' + (c[1] * k).toFixed(1)).join(' ');
+  const cy = L.len + 50, H = cy + 50 + 26;
+  return '<svg class="lantern__svg" viewBox="-70 0 140 ' + H + '" aria-hidden="true" focusable="false"><g class="m-lantern">' +
+    '<path d="M0 0V' + (cy - 44) + '" stroke="' + OL + '" stroke-width="4"/>' +
+    '<g transform="translate(0 ' + cy + ')"><circle r="66" fill="url(#gGlowGold)" opacity=".8" class="m-lglow"/>' +
+    '<polygon points="' + fmt(1) + '" fill="' + L.c1 + '" stroke="' + OL + '" stroke-width="4" stroke-linejoin="round"/>' +
+    '<polygon points="' + fmt(0.66) + '" fill="' + L.c2 + '"/><circle r="13" fill="#FFF6D8"/>' +
+    '<path d="M0 46V70M-9 46l-7 20M9 46l7 20" stroke="#FFD166" stroke-width="3.2" stroke-linecap="round"/></g></g></svg>';
+}
+
+/* swap the placeholders in the page for the drawings */
+function buildArt() {
+  let n = 0;
+  $$('[data-mascot]').forEach((el) => { el.innerHTML = mascotSVG(el.dataset.mascot, ++n); });
+  $$('[data-bunting]').forEach((el) => { el.innerHTML = buntingSVG(); });
+  $$('[data-lantern]').forEach((el) => { el.innerHTML = lanternSVG(el.dataset.lantern); });
+}
+
+/* ================= background music (generated in the browser, started by the Sound button) ================= */
+const Music = (() => {
+  let ctx = null, master = null, eng = null, timer = 0, on = false, el = null, elFade = 0;
+  const LEVEL = 0.42;
+  const btn = $('#btn-sound'), label = $('#sound-label');
+  function ui() {
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    label.textContent = on ? 'Sound: On' : 'Sound: Off';
+    btn.setAttribute('aria-label', on ? 'Sound: On. Press to turn the background music off' : 'Sound: Off. Press to turn the background music on');
+  }
+  function tick() { if (!on || !ctx) return; eng.scheduleUntil(ctx.currentTime + 2.5); timer = setTimeout(tick, 500); }
+  function fadeEl(to, done) {
+    clearInterval(elFade);
+    elFade = setInterval(() => {
+      const v = el.volume;
+      el.volume = clamp(v + (to > v ? 0.04 : -0.04), 0, 1);
+      if (Math.abs(el.volume - to) < 0.04) { el.volume = to; clearInterval(elFade); if (done) done(); }
+    }, 60);
+  }
+  async function start() {
+    if (MUSIC_URL) {
+      if (!el) { el = new Audio(MUSIC_URL); el.loop = true; el.volume = 0; }
+      try { await el.play(); } catch (e) { return false; }
+      fadeEl(0.6); return true;
+    }
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return false;
+    if (!ctx) {
+      ctx = new AC();
+      master = ctx.createGain(); master.gain.value = 0;
+      const comp = ctx.createDynamicsCompressor(); master.connect(comp); comp.connect(ctx.destination);
+      eng = createAudioEngine(ctx, master);
+    }
+    try { await ctx.resume(); } catch (e) { return false; }
+    eng.reset(ctx.currentTime + 0.1);
+    const t = ctx.currentTime;
+    master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value, t); master.gain.linearRampToValueAtTime(LEVEL, t + 2.2);
+    tick(); return true;
+  }
+  function stop() {
+    clearTimeout(timer);
+    if (el) fadeEl(0, () => el.pause());
+    if (ctx) {
+      const t = ctx.currentTime;
+      master.gain.cancelScheduledValues(t); master.gain.setValueAtTime(master.gain.value, t); master.gain.linearRampToValueAtTime(0, t + 0.6);
+      setTimeout(() => { if (!on) ctx.suspend(); }, 800);
+    }
+  }
+  async function toggle() {
+    if (on) { on = false; stop(); ui(); return; }
+    on = true; ui();
+    const ok = await start();
+    if (!ok) { on = false; ui(); }
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (!on) return;
+    if (document.hidden) { clearTimeout(timer); if (ctx) ctx.suspend(); if (el) el.pause(); }
+    else {
+      if (ctx) ctx.resume().then(() => { eng.reset(ctx.currentTime + 0.1); tick(); }).catch(() => {});
+      if (el) el.play().catch(() => {});
+    }
+  });
+  return { toggle: toggle };
+})();
+
+/* ================= loading screen, zigzag curtain and hero intro ================= */
+let heroFW = null, heroEmbers = null, loaderFX = null, festFX = null, thanksFX = null, thanksFW = null, returnFW = null;
+const loader = $('#loader'), mainEl = $('#top');
+const bar = $('#flamebar'), pct = $('#loader-pct');
+const intro = { tls: [], cancel: [], dead: false, token: 0, wd: 0 };
+const track = (tl) => { intro.tls.push(tl); return tl; };
+const waitTL = (tl) => new Promise((res) => { tl.eventCallback('onComplete', res); intro.cancel.push(res); });
+function killIntro() { intro.dead = true; intro.token++; intro.tls.forEach((t) => t.kill()); intro.cancel.forEach((c) => c()); intro.tls = []; intro.cancel = []; }
+function setVW() { root.style.setProperty('--vw', root.clientWidth + 'px'); }
+function setBar(p) { const v = Math.round(p); bar.style.setProperty('--p', p.toFixed(1)); pct.textContent = v + '%'; bar.setAttribute('aria-valuenow', v); }
+
+function zig(side, n) {
+  n = n || 14;
+  const st = 100 / n, pts = [];
+  if (side === 'l') {
+    pts.push('0 0', '100% 0');
+    for (let i = 0; i < n; i++) pts.push('88% ' + (i + 0.5) * st + '%', '100% ' + (i + 1) * st + '%');
+    pts.push('0 100%');
+  } else {
+    pts.push('100% 0', '12% 0');
+    for (let i = 0; i < n; i++) pts.push('0% ' + (i + 0.5) * st + '%', '12% ' + (i + 1) * st + '%');
+    pts.push('100% 100%');
+  }
+  return 'polygon(' + pts.join(',') + ')';
+}
+function imgReady(img) {
+  return new Promise((res) => {
+    if (!img || (img.complete && img.naturalWidth)) return res();
+    img.addEventListener('load', res, { once: true }); img.addEventListener('error', res, { once: true });
+  });
+}
+function assetsReady() {
+  const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+  return Promise.race([Promise.all([imgReady($('.loader__half img')), imgReady($('#hero-art > img')), fonts]), wait(7000)]);
+}
+function heroEls() {
+  return { title: $('#hero-title'), sub: $('#hero-sub'), btn: $('#btn-begin'), img: $('#hero-art > img'), glows: $$('.hero__glow'), lamps: $$('.lamp-glow'), stars: $('#hero-stars') };
+}
+function heroAll(h) { return [h.title, h.sub, h.btn, h.img, h.stars].concat(h.glows, h.lamps); }
+function prepHero() { gsap.set(heroAll(heroEls()), { opacity: 0 }); if (heroFW) heroFW.auto = false; }
+
+function heroIntro() {
+  const h = heroEls();
+  const tl = track(gsap.timeline({ defaults: { ease: 'power2.out' } }));
+  tl.to(h.stars, { opacity: 1, duration: 1.4 }, 0)
+    .fromTo(h.img, { opacity: 0, filter: 'brightness(.3) saturate(.6)' }, { opacity: 1, filter: 'brightness(1) saturate(1)', duration: 2, clearProps: 'filter' }, 0.15)
+    .to(h.glows, { opacity: 0.45, duration: 1.8, stagger: 0.25 }, 0.7)
+    .call(() => { if (heroFW) { heroFW.volley(3); heroFW.auto = true; } }, null, 1.4)
+    .fromTo(h.title, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 1.3, ease: 'back.out(1.6)' }, 1.6)
+    .to(h.lamps, { opacity: 1, duration: 0.7, stagger: 0.14 }, 2.4)
+    .fromTo(h.sub, { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.9 }, 2.7)
+    .fromTo(h.btn, { opacity: 0, y: 18, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.8 }, 3.3);
+  return tl;
+}
+
+function openCurtain(halves) {
+  return new Promise((res) => {
+    intro.cancel.push(res);
+    const tl = track(gsap.timeline({
+      onComplete: () => { loader.hidden = true; root.classList.remove('is-loading'); mainEl.inert = false; ScrollTrigger.refresh(); res(); }
+    }));
+    tl.to('.loader__top', { opacity: 0, duration: 0.45, ease: 'power1.in' }, 0)
+      .to('#loader-seam', { opacity: 1, scaleX: 1.2, duration: 0.5, ease: 'power2.out' }, 0.15)
+      .to('#page-glow', { opacity: 0.5, duration: 0.45, ease: 'power2.out' }, 0.15)
+      .to(halves[0], { xPercent: -104, duration: 1.35, ease: 'power3.inOut' }, 0.35)
+      .to(halves[1], { xPercent: 104, duration: 1.35, ease: 'power3.inOut' }, 0.35)
+      .to('#loader-seam', { opacity: 0, scaleX: 2.6, duration: 1.0, ease: 'power1.out' }, 0.7)
+      .to('#page-glow', { opacity: 0, duration: 1.2, ease: 'power1.out' }, 0.7)
+      .call(heroIntro, null, 0.7);
+  });
+}
+
+function finishIntroNow() {
+  loader.hidden = true; root.classList.remove('is-loading'); mainEl.inert = false;
+  if (hasGSAP) gsap.set(heroAll(heroEls()), { clearProps: 'opacity,transform,filter,visibility' });
+  $('#page-glow').style.opacity = '';
+}
+
+async function runIntro() {
+  intro.dead = false; intro.tls = []; intro.cancel = [];
+  const token = ++intro.token, stale = () => intro.token !== token;
+  clearTimeout(intro.wd);
+  intro.wd = setTimeout(() => { if (!loader.hidden) { killIntro(); finishIntroNow(); } }, 20000);
+  root.classList.add('is-loading'); mainEl.inert = true; loader.hidden = false; loader.style.opacity = '1';
+  setVW(); jumpTop();
+  const halves = $$('.loader__half');
+  halves[0].style.clipPath = zig('l'); halves[1].style.clipPath = zig('r');
+  const lines = $$('#loader-lines > *'), glows = $$('.lglow');
+
+  if (reduced) {
+    setBar(100);
+    lines.forEach((l) => { l.style.strokeDashoffset = '0'; l.style.opacity = '0.3'; });
+    loader.style.setProperty('--reveal', '230');
+    [1, 2, 3, 4].forEach((n) => loader.style.setProperty('--d' + n, '1'));
+    glows.forEach((g) => { g.style.opacity = '0.8'; });
+    halves.forEach((hv) => { hv.style.transform = ''; });
+    await wait(800); if (stale()) return;
+    finishIntroNow();
+    return;
+  }
+
+  gsap.set(halves, { xPercent: 0 }); gsap.set('.loader__top', { opacity: 1 }); gsap.set('#loader-seam', { scaleX: 0, opacity: 0 });
+  gsap.set(loader, { '--reveal': 0, '--d1': 0, '--d2': 0, '--d3': 0, '--d4': 0 });
+  gsap.set(lines, { strokeDashoffset: 1, opacity: 1 }); gsap.set(glows, { opacity: 0 });
+  prepHero(); setBar(0);
+
+  const st = { p: 0 };
+  const tl = track(gsap.timeline());
+  tl.to(lines, { strokeDashoffset: 0, duration: 1.5, ease: 'power1.inOut', stagger: { amount: 1.1 } }, 0.1)
+    .to(loader, { '--reveal': 100, duration: 1.7, ease: 'power2.out' }, 0.6);
+  [1, 2, 3, 4].forEach((n, i) => {
+    const at = 1.5 + i * 0.42, vars = { duration: 0.8, ease: 'power2.out' };
+    vars['--d' + n] = 1;
+    tl.to(loader, vars, at).to(glows[i], { opacity: 1, duration: 0.8 }, at);
+  });
+  tl.to(loader, { '--reveal': 230, duration: 0.9, ease: 'power1.inOut' }, 3.1)
+    .to(lines, { opacity: 0.25, duration: 0.9 }, 3.2)
+    .to(st, { p: 92, duration: 3.8, ease: 'power1.inOut', onUpdate: () => setBar(st.p) }, 0);
+
+  await waitTL(tl); if (stale()) return;
+  await assetsReady(); if (stale()) return;
+  const fin = track(gsap.to(st, { p: 100, duration: 0.5, ease: 'power1.out', onUpdate: () => setBar(st.p) }));
+  await waitTL(fin); if (stale()) return;
+  await wait(250); if (stale()) return;
+  await openCurtain(halves);
+}
+
+/* ================= scroll-driven story (GSAP ScrollTrigger on sticky stages) ================= */
+let scrollCtx = null;
+function buildScroll() {
+  if (!hasGSAP || reduced) return;
+  if (scrollCtx) scrollCtx.revert();
+  scrollCtx = gsap.context(() => { safe(meaningTL); safe(storyTL); safe(festivalTriggers); });
+  ScrollTrigger.refresh();
+}
+
+function meaningTL() {
+  const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: '#meaning', start: 'top top', end: 'bottom bottom', scrub: 0.8 } });
+  const svg = $('#m-diya .diya');
+  tl.fromTo('#m-night', { opacity: 1 }, { opacity: 0, duration: 0.6 }, 0.05)
+    .fromTo(svg, { '--g': 0.12 }, { '--g': 1, duration: 0.65 }, 0)
+    .fromTo('#m-copy', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.2, ease: 'power2.out' }, 0.04)
+    .fromTo('#m-copy', { color: '#FFF4D6' }, { color: '#1B1030', duration: 0.1 }, 0.3)
+    .fromTo('#m-copy .eyebrow', { color: '#FFD166' }, { color: '#7a2c10', duration: 0.1 }, 0.3)
+    .fromTo('.m-lamps .diya', { scale: 0, opacity: 0, transformOrigin: '50% 100%' }, { scale: 1, opacity: 1, duration: 0.12, stagger: { each: 0.05 }, ease: 'back.out(2)' }, 0.32);
+  tl.set({}, {}, 1);
+}
+
+/* svg shapes scale around their own centre */
+function svgAt(el) { if (el) gsap.set(el, { svgOrigin: el.getAttribute('cx') + ' ' + el.getAttribute('cy') }); return el; }
+
+function storyTL() {
+  const scene = (id, build) => {
+    const el = document.getElementById(id); if (!el) return;
+    const q = gsap.utils.selector(el);
+    const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: el, start: 'top top', end: 'bottom bottom', scrub: 0.8, invalidateOnRefresh: true } });
+    build(tl, q, el);
+    tl.set({}, {}, 1);
+    if (tl.duration() > 1.001) console.warn('[diwali] ' + id + ' runs past its scroll range: ' + tl.duration().toFixed(3));
+  };
+  const cardIn = (tl, q, at, dur) => tl.fromTo(q('.tcard'), { autoAlpha: 0, y: 50 }, { autoAlpha: 1, y: 0, duration: dur || 0.12, ease: 'power2.out' }, at);
+
+  /* every picture is shown whole inside its frame; the camera only eases back a few percent so nothing is ever cut off at the end of a scene */
+  /* 1. Exile: a slow pull-back from the walkers while the sun grows warmer and leaves fall (CSS) */
+  scene('scene-exile', (tl, q) => {
+    svgAt(q('.sunglow')[0]);
+    tl.fromTo(q('.pan'), { scale: 1.09, transformOrigin: '36% 55%' }, { scale: 1, duration: 0.82, ease: 'power1.out' }, 0)
+      .fromTo(q('.sunglow'), { opacity: 0.15, scale: 0.85 }, { opacity: 0.65, scale: 1.15, duration: 1 }, 0);
+    cardIn(tl, q, 0.08);
+  });
+
+  /* 2. Abduction: the forest darkens around the golden deer (its shine is CSS) */
+  scene('scene-abduct', (tl, q) => {
+    tl.fromTo(q('.pan'), { scale: 1.09, transformOrigin: '47% 50%' }, { scale: 1, duration: 0.82, ease: 'power1.out' }, 0)
+      .fromTo(q('.dark'), { opacity: 0.1 }, { opacity: 0.6, duration: 0.85 }, 0);
+    cardIn(tl, q, 0.12);
+  });
+
+  /* 3. Jatayu: a slow sweep across the sky, drifting feathers, a softer sunset tone */
+  scene('scene-jatayu', (tl, q) => {
+    tl.fromTo(q('.pan'), { scale: 1.08, transformOrigin: '60% 24%' }, { scale: 1, duration: 0.82, ease: 'power1.out' }, 0)
+      .fromTo(q('.tint'), { opacity: 0 }, { opacity: 0.75, duration: 0.9 }, 0.05);
+    cardIn(tl, q, 0.1);
+  });
+
+  /* 4. Hanuman: a comet of light leaps from Ram's hand over the sea to Lanka */
+  scene('scene-hanuman', (tl, q) => {
+    const paths = q('.gpath, .gpath2'), path = q('.gpath')[0], orb = q('.gorb')[0], trail = q('.gtrail')[0], dots = q('.gdot'), land = q('.glanding')[0];
+    const L = path.getTotalLength(), pos = { t: 0 };
+    paths.forEach((p) => { p.style.strokeDasharray = L + ' ' + L; p.style.strokeDashoffset = L; });
+    svgAt(land);
+    const paint = () => {
+      const t = pos.t, off = (L * (1 - t)).toFixed(1), pt = path.getPointAtLength(t * L);
+      paths.forEach((p) => { p.style.strokeDashoffset = off; });
+      gsap.set(orb, { x: pt.x, y: pt.y });
+      dots.forEach((d, i) => { const p = path.getPointAtLength(Math.max(0, t - (i + 1) * 0.026) * L); d.setAttribute('cx', p.x.toFixed(1)); d.setAttribute('cy', p.y.toFixed(1)); });
+    };
+    paint();
+    tl.fromTo(q('.pan'), { scale: 1.07, transformOrigin: '38% 52%' }, { scale: 1, duration: 0.8, ease: 'power1.inOut' }, 0)
+      .fromTo([orb, trail], { opacity: 0 }, { opacity: 1, duration: 0.04 }, 0.22)
+      .to(pos, { t: 1, duration: 0.5, ease: 'power1.inOut', onUpdate: paint }, 0.25)
+      .to([orb, trail], { opacity: 0, duration: 0.06 }, 0.76)
+      .fromTo(land, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 3, duration: 0.05, ease: 'power2.out' }, 0.74)
+      .to(land, { opacity: 0, scale: 5, duration: 0.14 }, 0.79);
+    cardIn(tl, q, 0.1);
+  });
+
+  /* 5. The battle: bow raised, arrow glows, string drawn, arrow flies, a burst of light carries Ravana away and dawn rises */
+  scene('scene-battle', (tl, q) => {
+    const pan = q('.pan'), arrow = q('.arrow'), nock = q('.nockglow'), burst = q('.burst'), ring = q('.ring'),
+      sun = q('.sunrise'), plate = q('.plate'), flash = q('.flash'), motes = q('.mote');
+    [nock, burst, ring, sun].forEach((g) => svgAt(g[0]));
+    /* the camera starts close on Ram and the bow, then draws back to show the whole sky before the arrow lands */
+    tl.fromTo(pan, { scale: 1.3, transformOrigin: '16% 34%' }, { scale: 1.14, duration: 0.38, ease: 'power1.inOut' }, 0)
+      .fromTo(nock, { opacity: 0, scale: 0.4 }, { opacity: 0.95, scale: 2.4, duration: 0.2, ease: 'power2.in' }, 0.1)
+      .to(nock, { scale: 3.4, opacity: 1, duration: 0.08 }, 0.3)
+      .fromTo(arrow, { x: 634, y: 308, opacity: 0 }, { opacity: 1, duration: 0.02 }, 0.38)
+      .to(arrow, { x: 1590, y: 326, duration: 0.22, ease: 'power2.in' }, 0.4)
+      .to(nock, { opacity: 0, duration: 0.08 }, 0.4)
+      .to(pan, { scale: 1.04, duration: 0.22, ease: 'power1.inOut' }, 0.38)
+      .to(arrow, { opacity: 0, duration: 0.02 }, 0.62)
+      /* impact: ring, burst, screen shake, white-gold flash; under the flash the painting swaps to the Ravana-free plate */
+      .set(ring, { opacity: 0.95, scale: 0.3 }, 0.6)
+      .to(ring, { opacity: 0, scale: 16, duration: 0.2, ease: 'power2.out' }, 0.6)
+      .set(burst, { opacity: 1, scale: 0.2 }, 0.6)
+      .to(burst, { scale: 6, duration: 0.08, ease: 'power2.out' }, 0.6)
+      .to(burst, { opacity: 0, scale: 10, duration: 0.16, ease: 'power1.out' }, 0.68)
+      .to(pan, { x: 6, duration: 0.012, repeat: 7, yoyo: true, ease: 'none' }, 0.61)
+      .fromTo(flash, { opacity: 0 }, { opacity: 0.95, duration: 0.045, ease: 'power2.out' }, 0.605)
+      .fromTo(plate, { opacity: 0 }, { opacity: 1, duration: 0.03 }, 0.625)
+      .to(flash, { opacity: 0, duration: 0.17, ease: 'power1.in' }, 0.665)
+      /* afterwards: the moon turns to gold, light rises where Ravana stood, and the whole picture settles back into view */
+      .fromTo(sun, { opacity: 0, scale: 0.55 }, { opacity: 0.95, scale: 1, duration: 0.22, ease: 'power2.out' }, 0.64)
+      .to(sun, { opacity: 0.7, scale: 1.1, duration: 0.14 }, 0.86)
+      .to(pan, { scale: 1, duration: 0.3, ease: 'power1.inOut' }, 0.68)
+      .to(flash, { opacity: 0.7, duration: 0.1 }, 0.9);
+    motes.forEach((m, i) => {
+      const t0 = 0.66 + (i / motes.length) * 0.1, dx = rand(-110, 110);
+      tl.fromTo(m, { opacity: 0, x: 0, y: 0 }, { opacity: 1, x: dx * 0.4, y: -70, duration: 0.06, ease: 'power1.out' }, t0)
+        .to(m, { opacity: 0, x: dx, y: -250, duration: 0.18, ease: 'power1.in' }, t0 + 0.06);
+    });
+    cardIn(tl, q, 0.76, 0.1);
+  });
+
+  /* 6. Ayodhya: one diya, then another, then the whole city glows, then fireworks */
+  scene('scene-return', (tl, q, el) => {
+    const holes = q('.hole'), glints = q('.glint'), n = holes.length - 1;
+    tl.fromTo(q('.pan'), { scale: 1.09, transformOrigin: '40% 58%' }, { scale: 1, duration: 0.85, ease: 'power1.out' }, 0)
+      .fromTo(q('#return-entry'), { opacity: 1 }, { opacity: 0, duration: 0.1, ease: 'power1.out' }, 0)
+      .to(holes[0], { attr: { r: RETURN_HOLES[0][2] }, duration: 0.12, ease: 'power2.out' }, 0.1)
+      .to(glints[0], { opacity: 1, duration: 0.1 }, 0.1)
+      .to(holes[1], { attr: { r: RETURN_HOLES[1][2] }, duration: 0.12, ease: 'power2.out' }, 0.24)
+      .to(glints[1], { opacity: 1, duration: 0.1 }, 0.24)
+      .to(holes.slice(2, n), { attr: { r: 240 }, duration: 0.14, stagger: 0.03, ease: 'power2.out' }, 0.38)
+      .to(glints.slice(2), { opacity: 1, duration: 0.12, stagger: 0.03 }, 0.38)
+      .to(holes[n], { attr: { r: 1500 }, duration: 0.25, ease: 'power2.in' }, 0.56)
+      .to(q('.duskrect'), { attr: { 'fill-opacity': 0 }, duration: 0.2 }, 0.7)
+      .to(q('#return-wash'), { opacity: 0.85, duration: 0.25 }, 0.62)
+      .to(glints, { opacity: 0.35, duration: 0.15 }, 0.8);
+    cardIn(tl, q, 0.2);
+    ScrollTrigger.create({
+      trigger: el, start: 'top top', end: 'bottom bottom',
+      onUpdate: (self) => {
+        const on = self.progress > 0.55 && self.progress < 0.999;
+        if (returnFW) { if (on && !returnFW.auto) { returnFW.auto = true; returnFW.volley(3); } else if (!on) returnFW.auto = false; }
+      },
+      onLeave: () => { if (returnFW) returnFW.auto = false; },
+      onLeaveBack: () => { if (returnFW) returnFW.auto = false; }
+    });
+  });
+}
+
+function festivalTriggers() {
+  ScrollTrigger.create({ trigger: '#festival', start: 'top 85%', end: 'bottom 15%', onToggle: (s) => { fest.vis = s.isActive; glowUpdate(); } });
+}
+
+/* ================= the festival of lights: "Light a Diya" ================= */
+const fest = { vis: false, lit: 0, count: 0 };
+const festEl = $('#festival'), diyaField = $('#diya-field'), diyaCount = $('#diya-count'), pageGlow = $('#page-glow');
+const FEST_IDLE = 'Each click lights one more diya';
+
+function festLine(n) {
+  if (n >= 14) return n + ' diyas lit. The whole night is golden now';
+  if (n >= 8) return n + ' diyas lit. Can you feel the warmth?';
+  if (n >= 4) return n + ' diyas lit. The river is starting to glow';
+  return n === 1 ? 'One diya lit. Every light counts' : n + ' diyas lit';
+}
+function glowUpdate() {
+  const target = fest.vis ? fest.lit * 0.32 : 0;
+  if (hasGSAP && !reduced) gsap.to(pageGlow, { opacity: target, duration: 0.9, overwrite: true });
+  else pageGlow.style.opacity = target;
+}
+function lightDiya() {
+  fest.count++;
+  fest.lit = clamp(fest.count / 14, 0, 1);
+  festEl.style.setProperty('--lit', fest.lit.toFixed(3));
+  const x = rand(5, 95), y = rand(57, 95), s = 24 + ((y - 50) / 50) * 44;
+  const d = document.createElement('div');
+  d.className = 'fdiya';
+  d.style.cssText = 'left:' + x.toFixed(1) + '%;top:' + y.toFixed(1) + '%;--s:' + s.toFixed(0) + ';z-index:' + Math.round(y * 10);
+  d.innerHTML = diyaSVG(1);
+  diyaField.appendChild(d);
+  if (diyaField.children.length > 140) diyaField.removeChild(diyaField.firstChild);
+  if (festFX) festFX.puff((x / 100) * festFX.w, (y / 100) * festFX.h);
+  diyaCount.textContent = festLine(fest.count);
+  glowUpdate();
+}
+function resetFestival() {
+  fest.count = 0; fest.lit = 0;
+  diyaField.textContent = '';
+  festEl.style.setProperty('--lit', '0');
+  diyaCount.textContent = FEST_IDLE;
+  glowUpdate();
+}
+
+/* ================= how to celebrate: three cards ================= */
+function initDiyaCard() {
+  const card = $('#card-diya'), hit = $('#diya-hit');
+  hit.addEventListener('click', () => {
+    const on = !card.classList.contains('is-lit');
+    card.classList.toggle('is-lit', on);
+    hit.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
+/* rangoli designer: every tap is mirrored eight ways around the centre diya */
+const RG = { W: 640, H: 800, cx: 320, cy: 380, color: '#FF8C1A', mode: 'petal', ring: 0, ctx: null, last: null, down: false };
+function rgBase() {
+  const g = RG.ctx, W = RG.W, H = RG.H, cx = RG.cx, cy = RG.cy;
+  g.save();
+  g.setLineDash([]); g.shadowBlur = 0; g.globalAlpha = 1;
+  g.clearRect(0, 0, W, H);
+  const bg = g.createRadialGradient(cx, cy, 10, cx, cy, 470);
+  bg.addColorStop(0, '#2a1b66'); bg.addColorStop(0.6, '#171a54'); bg.addColorStop(1, '#0d1236');
+  g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  g.lineCap = 'round'; g.lineWidth = 2;
+  g.strokeStyle = 'rgba(255,209,102,.1)';
+  for (let k = 0; k < 8; k++) { g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + Math.cos(k * Math.PI / 4) * 310, cy + Math.sin(k * Math.PI / 4) * 310); g.stroke(); }
+  g.strokeStyle = 'rgba(255,209,102,.24)'; g.setLineDash([2, 9]);
+  [70, 140, 210, 280].forEach((r) => { g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.stroke(); });
+  g.setLineDash([]);
+  const gl = g.createRadialGradient(cx, cy, 0, cx, cy, 44);
+  gl.addColorStop(0, 'rgba(255,244,214,1)'); gl.addColorStop(0.35, 'rgba(255,209,102,.85)'); gl.addColorStop(1, 'rgba(255,140,26,0)');
+  g.fillStyle = gl; g.beginPath(); g.arc(cx, cy, 44, 0, Math.PI * 2); g.fill();
+  g.fillStyle = '#B64A1B'; g.beginPath(); g.arc(cx, cy, 13, 0, Math.PI * 2); g.fill();
+  g.fillStyle = '#FFE29A'; g.beginPath(); g.arc(cx, cy, 5.5, 0, Math.PI * 2); g.fill();
+  g.restore();
+}
+function rgMark(x, y) {
+  const g = RG.ctx, dx = x - RG.cx, dy = y - RG.cy, r = Math.hypot(dx, dy);
+  if (r < 26) return;
+  const a = Math.atan2(dy, dx);
+  g.save();
+  g.fillStyle = RG.color; g.shadowColor = RG.color; g.shadowBlur = 9;
+  for (let k = 0; k < 8; k++) {
+    for (let m = 1; m >= -1; m -= 2) {
+      g.save();
+      g.translate(RG.cx, RG.cy); g.rotate(k * Math.PI / 4); g.scale(1, m); g.rotate(a); g.translate(r, 0);
+      if (RG.mode === 'petal') {
+        g.beginPath(); g.moveTo(-15, 0); g.bezierCurveTo(-5, -14, 15, -11, 26, 0); g.bezierCurveTo(15, 11, -5, 14, -15, 0); g.fill();
+        g.shadowBlur = 0; g.strokeStyle = 'rgba(255,244,214,.55)'; g.lineWidth = 1.4;
+        g.beginPath(); g.moveTo(-8, 0); g.lineTo(17, 0); g.stroke(); g.shadowBlur = 9;
+      } else {
+        g.beginPath(); g.arc(0, 0, 6.5, 0, Math.PI * 2); g.fill();
+      }
+      g.restore();
+    }
+  }
+  g.restore();
+}
+function rgRing() {
+  const g = RG.ctx, r = 56 + (RG.ring % 8) * 32;
+  RG.ring++;
+  const n = 8 * Math.max(2, Math.round((2 * Math.PI * r) / 22 / 8));
+  g.save(); g.fillStyle = RG.color; g.shadowColor = RG.color; g.shadowBlur = 8;
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2;
+    g.beginPath(); g.arc(RG.cx + Math.cos(a) * r, RG.cy + Math.sin(a) * r, 5.2, 0, Math.PI * 2); g.fill();
+  }
+  g.restore();
+}
+function initRangoli() {
+  const card = $('#card-rangoli'), cv = $('#rg-canvas'), toggle = $('#rg-toggle');
+  RG.ctx = cv.getContext('2d');
+  const pt = (e) => { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * (RG.W / r.width), (e.clientY - r.top) * (RG.H / r.height)]; };
+  const setMode = (m) => {
+    RG.mode = m;
+    $('#rg-petal').setAttribute('aria-pressed', m === 'petal' ? 'true' : 'false');
+    $('#rg-dot').setAttribute('aria-pressed', m === 'dot' ? 'true' : 'false');
+  };
+  toggle.addEventListener('click', () => {
+    const on = !card.classList.contains('is-designing');
+    card.classList.toggle('is-designing', on);
+    toggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+    toggle.textContent = on ? 'Back to the pattern' : 'Design your own';
+    if (on && !RG.started) { RG.started = true; rgBase(); }
+  });
+  $$('.swatch', card).forEach((s) => s.addEventListener('click', () => {
+    RG.color = s.dataset.c;
+    $$('.swatch', card).forEach((o) => o.setAttribute('aria-pressed', o === s ? 'true' : 'false'));
+  }));
+  $('#rg-petal').addEventListener('click', () => setMode('petal'));
+  $('#rg-dot').addEventListener('click', () => setMode('dot'));
+  $('#rg-ring').addEventListener('click', rgRing);
+  $('#rg-reset').addEventListener('click', () => { RG.ring = 0; rgBase(); });
+  cv.addEventListener('pointerdown', (e) => {
+    RG.down = true; try { cv.setPointerCapture(e.pointerId); } catch (x) { /* ignore */ }
+    const p = pt(e); RG.last = p; rgMark(p[0], p[1]);
+  });
+  cv.addEventListener('pointermove', (e) => {
+    if (!RG.down) return;
+    const p = pt(e);
+    if (Math.hypot(p[0] - RG.last[0], p[1] - RG.last[1]) > 20) { RG.last = p; rgMark(p[0], p[1]); }
+  });
+  const up = () => { RG.down = false; };
+  cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', up);
+}
+
+/* sweets: the button shares a wish (the photo itself stays still) */
+const WISHES = [
+  'Happy Diwali! May your home glow with joy and sweetness.',
+  'A sweet shared is happiness doubled. Pass the plate along.',
+  'May every diya you light bring someone a little closer to you.',
+  'Wishing you and your neighbours light, laughter, and plenty of laddus.',
+  'Share a sweet, share a smile. That is the spirit of Diwali.',
+  'May this festival fill your days with warmth and your table with family.'
+];
+function initSweets() {
+  const card = $('#card-sweets'), wish = $('#wish');
+  let i = 0, t = 0;
+  $('#btn-share').addEventListener('click', () => {
+    wish.textContent = WISHES[i++ % WISHES.length];
+    card.classList.add('is-lit');
+    clearTimeout(t); t = setTimeout(() => card.classList.remove('is-lit'), 2600);
+  });
+}
+
+/* ================= story progress rail ================= */
+function setStep(i) {
+  $$('#progress-list a').forEach((a, k) => { if (k === i) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
+  const now = $('#progress-now'); if (now) now.textContent = (i + 1) + ' / ' + STEPS.length + '  ' + STEPS[i][1];
+}
+function initProgress() {
+  const nav = $('#progress'), story = $('#story');
+  setStep(0);
+  if (!('IntersectionObserver' in window)) { nav.classList.add('is-on'); return; }
+  new IntersectionObserver((es) => es.forEach((e) => nav.classList.toggle('is-on', e.isIntersecting)), { rootMargin: '-35% 0px -35% 0px' }).observe(story);
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) setStep(+e.target.dataset.step); }), { rootMargin: '-50% 0px -50% 0px' });
+  STEPS.forEach((s, i) => { const el = document.getElementById(s[0]); if (el) { el.dataset.step = i; io.observe(el); } });
+}
+
+/* the thank-you friends and bunting wait until the section is on screen, then pop in */
+function initThanks() {
+  const el = $('#thanks');
+  if (!el) return;
+  if (!('IntersectionObserver' in window)) { el.classList.add('is-in'); return; }
+  const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { el.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.25 });
+  io.observe(el);
+}
+
+/* ================= reduce motion, sound, replay, begin ================= */
+function jumpTop() { root.style.scrollBehavior = 'auto'; window.scrollTo(0, 0); root.style.scrollBehavior = ''; }
+
+function paintMotionUI() {
+  const b = $('#btn-motion');
+  b.setAttribute('aria-pressed', reduced ? 'true' : 'false');
+  b.setAttribute('aria-label', reduced ? 'Reduce motion: On. Press to turn animations back on' : 'Reduce motion: Off. Press to reduce animations');
+  if (reduced) root.setAttribute('data-motion', 'reduced'); else root.removeAttribute('data-motion');
+}
+function applyMotion(on) {
+  reduced = !!on || !hasGSAP;
+  paintMotionUI();
+  if (hasGSAP) {
+    if (reduced) {
+      if (scrollCtx) { scrollCtx.revert(); scrollCtx = null; }
+      if (!loader.hidden) { killIntro(); finishIntroNow(); }
+    } else buildScroll();
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+  }
+  kick();
+}
+function replay() {
+  killIntro();
+  jumpTop();
+  resetFestival();
+  runIntro();
+}
+
+function initControls() {
+  $('#btn-sound').addEventListener('click', Music.toggle);
+  const bm = $('#btn-motion');
+  if (!hasGSAP) bm.hidden = true;
+  bm.addEventListener('click', () => applyMotion(!reduced));
+  if (mqReduce.addEventListener) mqReduce.addEventListener('change', (e) => applyMotion(e.matches));
+  $('#btn-begin').addEventListener('click', () => { $('#meaning').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' }); });
+  $('#btn-light').addEventListener('click', lightDiya);
+  $('#btn-replay').addEventListener('click', replay);
+  window.addEventListener('load', () => { if (hasGSAP) ScrollTrigger.refresh(); });
+}
+
+/* ================= start ================= */
+function makeFX() {
+  loaderFX = new FX($('#em-loader'), { embers: 40, color: '#FFD166', speed: 1 });
+  heroFW = new FX($('#fw-hero'), { fireworks: true, fwTop: 0.06, fwBottom: 0.36 });
+  heroEmbers = new FX($('#em-hero'), { embers: 26, color: '#FFB347', speed: 0.8 });
+  returnFW = new FX($('#fw-return'), { fireworks: true, fwTop: 0.12, fwBottom: 0.5 }); returnFW.auto = false;
+  festFX = new FX($('#em-festival'), { embers: 34, color: '#FFD166', speed: 0.7 });
+  thanksFX = new FX($('#em-thanks'), { embers: 30, color: '#FFD166', speed: 0.6 });
+  thanksFW = new FX($('#fw-thanks'), { fireworks: true, fwTop: 0.05, fwBottom: 0.4 });
+}
+
+(function boot() {
+  window.__diwaliBooted = true;
+  if (hasGSAP) { gsap.registerPlugin(ScrollTrigger); ScrollTrigger.config({ ignoreMobileResize: true }); }
+  else root.classList.add('nogsap');
+  paintMotionUI();
+  buildStatic();
+  buildArt();
+  makeFX();
+  initDiyaCard(); initRangoli(); initSweets(); initProgress(); initThanks(); initControls();
+  diyaCount.textContent = FEST_IDLE;
+  buildScroll();
+  runIntro();
+})();
+
+})();
+</script>
+
+</body></html>
